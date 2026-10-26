@@ -1769,6 +1769,19 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 /* Side pattern removed: plain light grey behind the centered frame */
 :root,:root[data-theme="dark"]{--frame-pat:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--frame-pat:none}}
+/* Side gutters take on each section's own background color as you scroll */
+@media (min-width:1441px){
+  body>main{box-shadow:none}
+  body>header.site,body>footer.site{box-shadow:none}
+  body>.util{border-image:linear-gradient(var(--band) 0 0) fill 0/0/0 100vmax}
+  body>header.site{border-image:linear-gradient(var(--paper) 0 0) fill 0/0/0 100vmax}
+  body>footer.site{border-image:linear-gradient(var(--band) 0 0) fill 0/0/0 100vmax}
+  main .page>section[data-sb]{border-image:linear-gradient(var(--sb) 0 0) fill 0/0/0 100vmax}
+}
+@media (min-width:1441px){
+  .hero{overflow:visible}
+  .hero .bg,.hero::before{left:calc((1440px - 100vw) / 2);right:calc((1440px - 100vw) / 2)}
+}
 </style>
 <meta name="robots" content="noindex">
 </head>

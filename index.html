@@ -1769,6 +1769,19 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 /* Side pattern removed: plain light grey behind the centered frame */
 :root,:root[data-theme="dark"]{--frame-pat:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--frame-pat:none}}
+/* Side gutters take on each section's own background color as you scroll */
+@media (min-width:1441px){
+  body>main{box-shadow:none}
+  body>header.site,body>footer.site{box-shadow:none}
+  body>.util{border-image:linear-gradient(var(--band) 0 0) fill 0/0/0 100vmax}
+  body>header.site{border-image:linear-gradient(var(--paper) 0 0) fill 0/0/0 100vmax}
+  body>footer.site{border-image:linear-gradient(var(--band) 0 0) fill 0/0/0 100vmax}
+  main .page>section[data-sb]{border-image:linear-gradient(var(--sb) 0 0) fill 0/0/0 100vmax}
+}
+@media (min-width:1441px){
+  .hero{overflow:visible}
+  .hero .bg,.hero::before{left:calc((1440px - 100vw) / 2);right:calc((1440px - 100vw) / 2)}
+}
 </style>
 </head>
 <body>
@@ -4149,6 +4162,9 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
   (function(){var bs=document.querySelectorAll('.basics');if(!bs.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('bx-in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
     [].forEach.call(bs,function(g){[].forEach.call(g.querySelectorAll('.basic'),function(c,i){c.style.setProperty('--i',i);[].forEach.call(c.querySelectorAll('.bico path,.bico circle,.bico rect,.bico line,.bico polyline'),function(s){s.setAttribute('pathLength','1')})});g.classList.add('bx-anim');io.observe(g)});
+  })();
+  (function(){function paint(){[].forEach.call(document.querySelectorAll('main .page>section'),function(s){var c=getComputedStyle(s).backgroundColor;var clear=!c||c==='transparent'||/rgba\(0, 0, 0, 0\)/.test(c);s.style.setProperty('--sb',clear?'var(--paper)':c);s.setAttribute('data-sb','')})}
+    paint();window.addEventListener('load',paint);try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',paint)}catch(x){}
   })();
   [].forEach.call(document.querySelectorAll('.nav-dd'),function(dd){
     dd.addEventListener('click',function(e){if(e.target.closest('.dd-menu a')){dd.classList.add('dd-off');if(document.activeElement)document.activeElement.blur()}});
