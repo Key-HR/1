@@ -1782,6 +1782,11 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
   .hero{overflow:visible}
   .hero .bg,.hero::before{left:calc((1440px - 100vw) / 2);right:calc((1440px - 100vw) / 2)}
 }
+/* Leadership: 7 leaders as a centered 4 + 3 layout */
+#p-about .leaders{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 28px;max-width:1080px;margin-inline:auto}
+#p-about .leaders .leader{flex:0 0 calc((100% - 3 * 28px) / 4);min-width:0}
+@media (max-width:900px){#p-about .leaders .leader{flex-basis:calc((100% - 2 * 28px) / 3)}}
+@media (max-width:560px){#p-about .leaders{gap:32px 18px}#p-about .leaders .leader{flex-basis:calc((100% - 18px) / 2)}}
 </style>
 <meta name="robots" content="noindex">
 </head>
