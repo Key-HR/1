@@ -1766,6 +1766,9 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
   body>footer.site{box-shadow:0 0 0 1px var(--band)}
   body>header.site{box-shadow:0 0 0 1px var(--line)}
 }
+/* Side pattern removed: plain light grey behind the centered frame */
+:root,:root[data-theme="dark"]{--frame-pat:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--frame-pat:none}}
 </style>
 <meta name="robots" content="noindex">
 </head>
