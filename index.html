@@ -4155,8 +4155,7 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
     var dlNs=null;try{if(window.claude&&typeof window.claude.use==='function')window.claude.use('downloads').then(function(ns){dlNs=ns}).catch(function(){})}catch(x){}
     function viaCap(k,fn){if(!dlNs)return false;var d=(window.KHR_FORMS||{})[k];if(!d)return true;var bin=atob(d),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);dlNs.save({filename:fn,data:new Blob([u],{type:'application/pdf'})}).catch(function(){});return true}
     document.addEventListener('click',function(e){var o=e.target.closest('[data-pdf]'),d=e.target.closest('[data-dl]');if(!o&&!d)return;e.preventDefault();var el=o||d,k=el.dataset.pdf||el.dataset.dl,fn=el.dataset.file;if(/^legal-packet-/.test(k)&&document.documentElement.lang==='es'){k='legal-packet-es';fn=fn.replace(/\.pdf$/,'-ES.pdf')}if(viaCap(k,fn))return;var url=blobUrl(k);if(!url)return;
-      if(d){save(url,fn);return}
-      var w=null;try{w=window.open(url,'_blank')}catch(x){}if(!w)save(url,fn)});
+      var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()});
   })();
   (function(){var sel=document.getElementById('luJur'),q=document.getElementById('luQ');if(!sel)return;var rows=[].slice.call(document.querySelectorAll('#p-legal-updates .lu-row')),em=document.querySelector('#p-legal-updates .lu-empty');
     function apply(){var j=sel.value,s=(q.value||'').toLowerCase().trim(),n=0;rows.forEach(function(r){var ok=(j==='all'||r.dataset.jur===j)&&(!s||(r.dataset.q+' '+r.textContent).toLowerCase().indexOf(s)>-1);r.hidden=!ok;if(ok)n++});em.hidden=n>0}
@@ -4281,7 +4280,7 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
       var g=a.group||'',O=ART_ORDER.filter(function(s){return (ARTICLES[s].group||'')===g}),i=O.indexOf(slug),p=O[(i-1+O.length)%O.length],n=O[(i+1)%O.length];
       $('arPrev').dataset.go=p;$('arPrev').querySelector('span').textContent=ARTICLES[p].title;$('arNext').dataset.go=n;$('arNext').querySelector('span').textContent=ARTICLES[n].title;sc.scrollTop=0;prog()}
     function prog(){var h=sc.scrollHeight-sc.clientHeight;bar.style.width=(h>0?Math.min(100,sc.scrollTop/h*100):100)+'%'}
-    function open(slug){last=document.activeElement;fill(slug);m.hidden=false;document.body.classList.add('ar-on');requestAnimationFrame(function(){m.classList.add('in')});setTimeout(function(){m.querySelector('.ar-close').focus()},60)}
+    function open(slug){last=document.activeElement;fill(slug);m.hidden=false;sc.scrollTop=0;requestAnimationFrame(function(){sc.scrollTop=0;prog()});document.body.classList.add('ar-on');requestAnimationFrame(function(){m.classList.add('in')});setTimeout(function(){m.querySelector('.ar-close').focus()},60)}
     function close(){m.classList.remove('in');document.body.classList.remove('ar-on');setTimeout(function(){m.hidden=true},260);if(last&&last.focus)last.focus()}
     document.addEventListener('click',function(e){var b=e.target.closest('[data-art]');if(b){e.preventDefault();open(b.dataset.art);return}
       if(!m.hidden&&e.target.closest('[data-close]'))close()});
