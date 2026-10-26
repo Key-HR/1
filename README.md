@@ -16,21 +16,20 @@ This repository holds the redesigned Key HR website and serves as its content go
 ## Folder Structure
 
 ```
-index.html                 All page content (routes like #payroll, #about)
-404.html                   Error page for any missing address
-css/site.css               All styles
-js/site.js                 Router, menus, animations, forms and reader
-js/i18n-es.js              Spanish strings loaded by the language toggle
-i18n/es.json               Spanish strings (editable source)
-assets/img/                Logo and hero photo
-assets/img/leaders/        Leadership headshots
-assets/img/community/      Community and event photos
-assets/forms/              Client forms and legal update packets (PDF, English and Spanish)
-<page>/index.html          Clean links for each page (for example /payroll/ opens #payroll)
-sitemap.xml, robots.txt    Search engine files
+index.html            All page content (routes like #payroll, #about)
+404.html              Error page for any missing address
+assets/
+  site.css            All styles
+  site.js             Router, menus, animations, forms and reader
+  spanish.js          Spanish translations used by the language toggle
+  images/             Logo, hero, leadership headshots and community photos
+  forms/              Client forms and legal update packets (PDF, English and Spanish)
+pages/                Clean links for each page (for example pages/payroll.html opens #payroll)
+sitemap.xml           Search engine page list
+robots.txt            Search engine rules
 ```
 
-Every page has a clean link: `about`, `services`, `payroll`, `hr`, `compliance`, `risk`, `benefits`, `peo`, `additional-solutions`, `who-we-serve`, `approach`, `brokers`, `resources`, `legal-updates`, `client-center`, `careers`, `privacy` and `w2`. For example, [key-hr.github.io/1/payroll/](https://key-hr.github.io/1/payroll/).
+Every page has a clean link in `pages/`, for example [key-hr.github.io/1/pages/payroll.html](https://key-hr.github.io/1/pages/payroll.html).
 
 The site also works when opened directly from a computer: open `index.html` in any browser.
 
