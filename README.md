@@ -10,8 +10,29 @@ This repository holds the redesigned Key HR website and serves as its content go
 |---|---|
 | **Live preview** | [key-hr.github.io/1](https://key-hr.github.io/1/) |
 | **Production domain** | [keyhro.com](https://keyhro.com) |
-| **Site file** | [`index.html`](index.html) (single-file site with in-page routing) |
+| **Site file** | [`index.html`](index.html) (one page with in-page routing) |
 | **Error page** | [`404.html`](404.html) (shown for any missing page) |
+
+## Folder Structure
+
+```
+index.html                 All page content (routes like #payroll, #about)
+404.html                   Error page for any missing address
+css/site.css               All styles
+js/site.js                 Router, menus, animations, forms and reader
+js/i18n-es.js              Spanish strings loaded by the language toggle
+i18n/es.json               Spanish strings (editable source)
+assets/img/                Logo and hero photo
+assets/img/leaders/        Leadership headshots
+assets/img/community/      Community and event photos
+assets/forms/              Client forms and legal update packets (PDF, English and Spanish)
+<page>/index.html          Clean links for each page (for example /payroll/ opens #payroll)
+sitemap.xml, robots.txt    Search engine files
+```
+
+Every page has a clean link: `about`, `services`, `payroll`, `hr`, `compliance`, `risk`, `benefits`, `peo`, `additional-solutions`, `who-we-serve`, `approach`, `brokers`, `resources`, `legal-updates`, `client-center`, `careers`, `privacy` and `w2`. For example, [key-hr.github.io/1/payroll/](https://key-hr.github.io/1/payroll/).
+
+The site also works when opened directly from a computer: open `index.html` in any browser.
 
 ## Contents
 
