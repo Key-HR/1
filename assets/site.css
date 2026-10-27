@@ -759,7 +759,6 @@ header.site .btn{padding:0 22px}
 .svc-rows a{display:grid;grid-template-columns:44px minmax(0,1fr) 18px;gap:16px;align-items:center;padding:18px 20px;border-radius:16px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:inherit;transition:border-color .3s,transform .4s var(--spring),box-shadow .4s var(--ease)}
 .svc-rows a:hover{border-color:var(--red);transform:translateX(4px);box-shadow:var(--shadow)}
 .svc-rows .n{width:44px;height:40px;border-radius:0 0 8px 8px;background:var(--muted);color:var(--paper);display:grid;place-items:center;font-weight:600;font-size:var(--s-sm)}
-.svc-rows li:nth-child(4) .n{background:var(--red-fill);color:#fff}
 .svc-rows b{display:block;font-weight:600}
 .svc-rows small{display:block;color:var(--muted);font-size:var(--s-sm);line-height:1.5}
 .svc-rows i{width:9px;height:9px;border-top:2px solid var(--red);border-right:2px solid var(--red);transform:rotate(45deg)}
@@ -1306,10 +1305,13 @@ html.rv-on .rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .75s
 html.rv-on .rv.rv-in{opacity:1;transform:none}
 /* card hover */
 .feat,.pp-card,.rib,.ind,.cc-card,.w2-col,.legal-sec,.stat,.bl-feature,.rc-card,.online-card,.trackcard,.pp-perks>div,.pp-act,.leader,.why,.fit-item,.story,.esac-card,.pp-res>a{transition:transform .45s var(--ease-x),box-shadow .45s var(--ease-x),border-color .35s ease,background-color .35s ease}
-.feat:hover,.pp-card:hover,.ind:hover,.cc-card:hover,.w2-col:hover,.legal-sec:hover,.stat:hover,.bl-feature:hover,button.rc-card:hover,.online-card:hover,.pp-perks>div:hover,.pp-act:hover,.story:hover,.esac-card:hover,.pp-res>a:hover{transform:translateY(-6px);border-color:var(--crimson);box-shadow:0 26px 54px -26px rgba(20,10,10,.38),inset 0 3px 0 var(--crimson)}
-.rib:hover{transform:translateY(-6px);box-shadow:inset 0 3px 0 var(--crimson)}
-.why:hover,.leader:hover{transform:translateY(-6px)}
+/* only cards you can click lift, and only with a real pointer (no sticky hover after a tap); reading blocks just warm their border */
+@media (hover:hover) and (pointer:fine){
+a.feat:hover,.ind:hover,.cc-card:hover,.bl-feature:hover,button.rc-card:hover,.story:hover,.pp-res>a:hover{transform:translateY(-4px);border-color:var(--crimson);box-shadow:0 26px 54px -26px rgba(20,10,10,.38),inset 0 3px 0 var(--crimson)}
+.rib:hover{transform:translateY(-4px);box-shadow:inset 0 3px 0 var(--crimson)}
+.feat:not(a):hover,.pp-card:hover,.pp-perks>div:hover,.stat:hover,.pp-act:hover,.online-card:hover,.esac-card:hover{border-color:color-mix(in srgb,var(--crimson) 28%,var(--line))}
 .why:hover .bico{color:var(--crimson)}
+}
 /* images */
 .hs{overflow:hidden;transition:transform .5s var(--ease-x),box-shadow .5s var(--ease-x)}
 .hs img{transition:transform .7s var(--ease-x)}
@@ -1334,14 +1336,17 @@ html.rv-on .rv.rv-in{opacity:1;transform:none}
   .hs img,.comm-photos>div>*{transition:none}.leader:hover .hs img,.comm-photos>div:hover>*{transform:none}}
 /* Ask Key HR box motion */
 .hero-ask.wwd-ask{transition:transform .45s var(--ease-x),box-shadow .45s var(--ease-x),border-color .35s ease}
-.hero-ask.wwd-ask:hover,.hero-ask.wwd-ask:focus-within{transform:translateY(-6px);border-color:var(--crimson);box-shadow:0 26px 54px -26px rgba(20,10,10,.38),inset 0 3px 0 var(--crimson)}
-.wwd-ask .ha-dot{animation:haPulse 2.4s ease-in-out infinite}
-@keyframes haPulse{0%,100%{box-shadow:0 0 0 4px color-mix(in srgb,var(--red) 18%,transparent)}50%{box-shadow:0 0 0 8px color-mix(in srgb,var(--red) 6%,transparent)}}
+.hero-ask.wwd-ask:focus-within{border-color:var(--crimson);box-shadow:0 26px 54px -26px rgba(20,10,10,.38),inset 0 3px 0 var(--crimson)}
+@media (hover:hover) and (pointer:fine){.hero-ask.wwd-ask:hover{transform:translateY(-4px);border-color:var(--crimson);box-shadow:0 26px 54px -26px rgba(20,10,10,.38),inset 0 3px 0 var(--crimson)}}
+/* pulse ring on its own layer: transform and opacity only, no per-frame repaint */
+.wwd-ask .ha-dot{position:relative}
+.wwd-ask .ha-dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:color-mix(in srgb,var(--red) 22%,transparent);animation:haPulse 2.4s ease-in-out infinite}
+@keyframes haPulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.5);opacity:.25}}
 .wwd-ask input{transition:border-color .3s ease,box-shadow .3s ease}
 .wwd-ask input:focus{border-color:var(--crimson);box-shadow:0 0 0 4px color-mix(in srgb,var(--crimson) 14%,transparent)}
 .wwd-ask .ha-chips button{transition:transform .3s var(--ease-x),border-color .3s ease,color .3s ease,background-color .3s ease}
 .wwd-ask .ha-chips button:hover{transform:translateY(-2px);border-color:var(--crimson);color:var(--crimson)}
-@media (prefers-reduced-motion:reduce){.wwd-ask .ha-dot{animation:none}.hero-ask.wwd-ask:hover,.hero-ask.wwd-ask:focus-within,.wwd-ask .ha-chips button:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.wwd-ask .ha-dot,.wwd-ask .ha-dot::after{animation:none}.hero-ask.wwd-ask:hover,.hero-ask.wwd-ask:focus-within,.wwd-ask .ha-chips button:hover{transform:none}}
 .comm-photos div.has-img{border:0;background:var(--mist);box-shadow:var(--shadow)}
 .comm-photos div.has-img img{width:100%;height:100%;object-fit:cover;display:block}
 .trackcard .tc-note{margin:16px 0 0;font-size:var(--s-sm);line-height:1.65;color:var(--muted)}
@@ -1438,7 +1443,7 @@ html.rv-on .rv.rv-in{opacity:1;transform:none}
 .st2-item p{font-size:var(--s-md)}
 @media (max-width:1000px){.st2{grid-template-columns:minmax(0,1fr)}}
 /* Story body flows across two columns */
-.st2-panel .st-body{display:block;column-count:2;column-gap:clamp(24px,3vw,44px)}
+.st2-panel .st-body{display:block;max-width:66ch}
 .st2-panel .st-body p{margin:0 0 1.6em}
 .st2-panel .st-body p:last-child{margin-bottom:0}
 @media (max-width:640px){.st2-panel .st-body{column-count:1}}
@@ -1524,7 +1529,7 @@ html.rv-on .rv.rv-in{opacity:1;transform:none}
 .panel li{transition:transform .3s var(--ease),color .3s}
 .panel li:hover{transform:translateX(4px)}
 .panel.in h3{animation:h3In .6s var(--ease) both}
-@keyframes h3In{from{opacity:0;transform:translateY(10px);letter-spacing:.01em}to{opacity:1;transform:none}}
+@keyframes h3In{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .tablist button{transition:color .25s,transform .4s var(--spring,cubic-bezier(.34,1.56,.64,1)),opacity .5s var(--ease)}
 .tablist button:hover{transform:translateX(3px)}
 .tablist button[aria-selected="true"]{transform:translateX(6px);font-weight:600}
@@ -1775,3 +1780,97 @@ a.feat.as-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 #p-about .leaders .leader{flex:0 0 calc((100% - 3 * 28px) / 4);min-width:0}
 @media (max-width:900px){#p-about .leaders .leader{flex-basis:calc((100% - 2 * 28px) / 3)}}
 @media (max-width:560px){#p-about .leaders{gap:32px 18px}#p-about .leaders .leader{flex-basis:calc((100% - 18px) / 2)}}
+/* Motion polish: reveals hide without a fade-out and run on their stagger; tab underline eases its width on phones */
+html.rv-on .rv:not(.rv-in){transition:none!important}
+html.rv-on .rv.rv-in{transition:opacity .75s var(--ease-x) var(--rv-d,0ms),transform .75s var(--ease-x) var(--rv-d,0ms)!important}
+@media (max-width:860px){.tab-ind{transition:transform .5s var(--spring),width .5s var(--spring)}}
+@media (prefers-reduced-motion:reduce){html.rv-on .rv.rv-in{transition:none!important}}
+/* Polish pass (design critic round 1) */
+/* Fallback face sized to Poppins so the header and headings don't jump when the web font arrives */
+@font-face{font-family:"Poppins Fallback";src:local("Arial"),local("ArialMT"),local("Helvetica");size-adjust:110%;ascent-override:95.45%;descent-override:31.82%;line-gap-override:9.09%}
+:root{--font:"Poppins","Poppins Fallback",ui-sans-serif,"Segoe UI",Helvetica,Arial,sans-serif}
+/* Dark mode: the maroon hover red is too dark on near-black, use the light red ink instead */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--crimson:#F2705F}:root:not([data-theme="light"]) .btn-line:hover{background:var(--red-fill);border-color:var(--red-fill)}}
+:root[data-theme="dark"]{--crimson:#F2705F}
+:root[data-theme="dark"] .btn-line:hover{background:var(--red-fill);border-color:var(--red-fill)}
+/* Header: near-solid so red buttons and dark bands don't smear through; solid while the phone menu is open */
+header.site{background:color-mix(in srgb,var(--paper) 96%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+header.site:has(.mainnav.open){background:var(--paper)}
+@media (max-width:1199px){.mainnav{gap:0}}
+/* Headline subtitles and summary-card titles: no forced breaks, tight leading */
+.phero h1 .soft{max-width:none;text-wrap:pretty}
+.tc-head b{display:block;line-height:1.22;text-wrap:balance}
+/* Section titles that ran larger than the page title */
+.st-head .h2{font-size:clamp(2.25rem,3.6vw,2.75rem);line-height:1.05}
+.st2-tab .h2,.st2-item .h2{font-size:clamp(2rem,3.2vw,2.75rem)}
+/* Numerals: step badges are tinted circles, editorial numbers are outlined */
+.portal .row .dot{width:40px;height:40px;border-radius:50%}
+.lg-n{font-size:2.25rem;font-weight:700;color:transparent;-webkit-text-stroke:1.2px color-mix(in srgb,var(--ink) 35%,transparent)}
+.sp-num{font-weight:700;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.3px color-mix(in srgb,var(--band-ink) 45%,transparent);transition:color .3s ease,-webkit-text-stroke-color .3s ease}
+.sp-step:hover .sp-num{color:var(--band-ink);-webkit-text-stroke-color:var(--band-ink)}
+/* Compliance card accent starts after the rounded corner instead of running across it */
+.cp-pillar::before{left:24px;right:24px;border-radius:0 0 3px 3px}
+/* Chat button keeps an edge on dark bands */
+.chat-fab{box-shadow:0 0 0 1.5px color-mix(in srgb,var(--paper) 22%,transparent),0 18px 40px -16px rgba(0,0,0,.55)}
+/* Quote modal: room for the selects, no widow in the note, lighter inner card */
+.q-scroll .quote-wrap{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(28px,4vw,56px)}
+.q-scroll .formcard{box-shadow:none}
+.formfoot small{text-wrap:balance}
+@media (max-width:900px){.q-scroll .quote-wrap{grid-template-columns:1fr}}
+/* Phones */
+@media (max-width:600px){
+  .phero h1,#p-who-we-serve .phero h1{font-size:clamp(2.125rem,9.2vw,2.5rem)}
+  .h2,.st-head .h2,.st2-tab .h2,.st2-item .h2{font-size:clamp(1.75rem,7.4vw,2.125rem)}
+  .phero .lede,#p-about .phero .lede{font-size:1.125rem;line-height:1.6}
+  .tc-head{flex-direction:column-reverse;align-items:flex-start;gap:10px}
+  .portal .row b{line-height:1.3}
+  .portal .row small{display:block;line-height:1.45;margin-top:2px}
+  .rc-types{border-radius:20px}
+  .chat-fab{width:50px;height:50px;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .chat-fab .orb{width:36px;height:36px}
+  .chat-fab .orb::before{width:14px;height:14px}
+}
+@media (max-width:520px){
+  .btn{justify-content:center;text-align:center;text-wrap:balance;padding-inline:22px}
+  .inds{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  footer .fgr{grid-template-columns:1fr 1fr;gap:32px 20px}
+  footer .fgr>div:first-child{grid-column:1/-1}
+}
+/* Polish pass (design critic round 2) */
+/* Paragraph rag: avoid one-word last lines */
+p,li,dd,figcaption{text-wrap:pretty}
+/* Quote modal: the panel is the card, so the form sits on it directly; the note takes the free width */
+.q-scroll .formcard{border:0;padding:0;background:none;box-shadow:none;border-radius:0}
+.formfoot small{flex:1 1 240px}
+/* Key-tooth tabs in dark mode: steel instead of a near-white block */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.pillar:not(.hot) .pn,.svc-rows .n,.keyline:not(.k4) .kstep:not(:nth-child(3)) .tooth,.k4 .kstep:not(:nth-child(4)) .tooth){background:var(--steel);color:var(--ink)}}
+:root[data-theme="dark"] :is(.pillar:not(.hot) .pn,.svc-rows .n,.keyline:not(.k4) .kstep:not(:nth-child(3)) .tooth,.k4 .kstep:not(:nth-child(4)) .tooth){background:var(--steel);color:var(--ink)}
+/* Chat input: long placeholder ends cleanly */
+.chat form input{text-overflow:ellipsis}
+@media (max-width:860px){
+  /* service tabs read as a scroller: soft right edge, last tab can scroll clear of it */
+  .tablist{padding-right:36px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}
+}
+@media (max-width:600px){
+  .lede{font-size:1.125rem;line-height:1.6}
+  /* chat panel dims the page behind it, and the toggle stays above the dim */
+  .chat{transition:transform .5s var(--spring),opacity .3s,box-shadow .3s}
+  body.chat-on .chat{box-shadow:0 0 0 100vmax rgba(18,18,18,.5),0 30px 70px -24px rgba(0,0,0,.45)}
+  body.chat-on .chat-fab{z-index:72}
+}
+@media (max-width:420px){
+  .btn{font-size:.875rem;padding-inline:18px;gap:8px}
+  /* service rows: chevron instead of the word, so titles get the width */
+  .portal a.row{grid-template-columns:40px minmax(0,1fr) 10px}
+  .portal a.row em{font-size:0;width:9px;height:9px;border-top:2px solid var(--red);border-right:2px solid var(--red);transform:rotate(45deg)}
+  .cta-panel{padding-inline:18px}
+  .cta-panel .btn{padding-inline:14px}
+}
+/* Post-pass residuals: heading leading in the leadership note, one-line modal note, even rag in Our Story, featured post link sits at the card foot */
+.lead-story .ls-h{line-height:1.2;text-wrap:balance}
+.formfoot small{max-width:60ch}
+.st2-panel .st-body p{text-wrap:wrap}
+.bl-feature{grid-template-rows:auto auto auto auto 1fr}
+.bl-feature .rc-go{align-self:end}
