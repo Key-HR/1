@@ -102,7 +102,7 @@ The site is one page (`index.html`) with in-page routes. Each route also has a c
 | PEO Services | `#peo` | `pages/peo.html` |
 | Additional Solutions | `#additional-solutions` | `pages/additional-solutions.html` |
 | Who We Serve | `#who-we-serve` | `pages/who-we-serve.html` |
-| Comprehensive Assessment | `#approach` | `pages/approach.html` |
+| Assessment | `#approach` | `pages/approach.html` |
 | Partnerships | `#brokers` | `pages/brokers.html` |
 | Resources | `#resources` | `pages/resources.html` |
 | Employment Law Updates | `#legal-updates` | `pages/legal-updates.html` |
