@@ -66,7 +66,7 @@
     [].forEach.call(tb.querySelectorAll('.tablist [role=tab]'),function(t,i){t.style.setProperty('--ti',i)});
     if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     tb.classList.add('tabs-anim');
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;tb.classList.add('tabs-in');var p=tb.querySelector('.panel:not([hidden])');if(p){p.classList.remove('in');void p.offsetWidth;p.classList.add('in')}io.unobserve(tb)})},{threshold:.25});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;tb.classList.add('tabs-in');setTimeout(function(){tb.classList.remove('tabs-anim','tabs-in')},1200);var p=tb.querySelector('.panel:not([hidden])');if(p){p.classList.remove('in');void p.offsetWidth;p.classList.add('in')}io.unobserve(tb)})},{threshold:.25});
     io.observe(tb);
   })();
   (function(){var root=document.getElementById('resource-center');if(!root)return;
@@ -241,12 +241,16 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
   (function(){if(!('IntersectionObserver' in window))return;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     var SEL='.page .sec-head,.page .wwd-ask,.page .feat,.page .why,.page .stat,.page .rib,.page .ind,.page .pp-card,.page .pp-perks>div,.page .pp-act,.page .trackcard,.page .cta-panel,.page .online-card,.page .leader,.page .story,.page .esac-card,.page .legal-sec,.page .legal-contact,.page .w2-col,.page .w2-note,.page .cc-card,.page .bl-feature,.page .bl-row,.page .sp-step,.page .comm-photos>div,.page .tabs,.page .assess-copy,.page .costcmp,.page .stairs>*,.page .faq,.page .quote-wrap,.page .split2>*,.page .pp-res>a,.page .after-cmp,.page .fit,.page .fit-result,.page .formcard,.page .stories,.page .badges,.page .grid3>*,.page .why4>*,.page .car-teams>*,.page .lead-list,.page .contact-lines,.page .st2-story,.page .st2-item,.page .cp-pillar,.page .resp-row,.page .cp-ev';
     document.documentElement.classList.add('rv-on');
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rv-in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    // reveal, then drop the reveal classes so each card's own hover transitions apply again
+    function reveal(el){el.classList.add('rv-in');setTimeout(function(){el.classList.remove('rv','rv-in')},(parseInt(el.style.getPropertyValue('--rv-d'),10)||0)+850)}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
     var seen=new Set();
     document.querySelectorAll(SEL).forEach(function(el){if(seen.has(el)||el.closest('.hero')||getComputedStyle(el).animationName!=='none')return;
-      if(el.parentElement&&el.parentElement.closest('.rv'))return;seen.add(el);el.classList.add('rv');
+      if(el.parentElement&&el.parentElement.closest('.rv'))return;
+      var r=el.getBoundingClientRect();if(r.width&&r.top<innerHeight&&r.bottom>0)return; // already on screen: it arrives with the page fade instead of blinking out and back
+      seen.add(el);el.classList.add('rv');
       var sib=[].slice.call(el.parentElement.children).filter(function(x){return seen.has(x)}),i=sib.indexOf(el);el.style.setProperty('--rv-d',Math.min(i,6)*80+'ms');io.observe(el)});
-    window.addEventListener('hashchange',function(){setTimeout(function(){document.querySelectorAll('.page:not([hidden]) .rv:not(.rv-in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('rv-in')})},60)})})();
+    window.addEventListener('hashchange',function(){setTimeout(function(){document.querySelectorAll('.page:not([hidden]) .rv:not(.rv-in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){reveal(el);io.unobserve(el)}})},60)})})();
 
   // Spanish language toggle
   (function(){var ES=window.I18N_ES||{},lang='en',touched=[],ESV={},busy=false;for(var k in ES)ESV[ES[k]]=1;
