@@ -1930,3 +1930,26 @@ p,li,dd,figcaption{text-wrap:pretty}
 .cc-desc mark{background:color-mix(in srgb,var(--red) 16%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 .cc-note{margin-top:14px;font-size:var(--s-xs);color:var(--muted)}
 @media (max-width:640px){.cc-form{grid-template-columns:1fr}.cc-head{flex-direction:column}}
+
+/* ===== About Us: leader bio on hover ===== */
+#p-about .leader.has-bio{position:relative}
+#p-about .leader.has-bio .hs{cursor:pointer}
+.ld-bio{position:absolute;z-index:6;left:50%;top:-10px;width:min(300px,86vw);padding:20px 22px;border-radius:20px;text-align:left;
+  background:rgba(22,24,28,.84);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);color:#fff;
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12);
+  opacity:0;visibility:hidden;transform:translate(-50%,8px) scale(.98);transition:opacity .25s ease,transform .3s var(--ease,ease),visibility 0s linear .3s;pointer-events:none}
+.ld-bio b{display:block;font-size:var(--s-sm);font-weight:600;margin-bottom:8px;color:#fff}
+.ld-bio b::after{content:"";display:block;width:28px;height:3px;border-radius:2px;background:var(--red);margin-top:8px}
+.ld-bio p{font-size:.86rem;line-height:1.6;color:rgba(255,255,255,.9);margin:0}
+#p-about .leader.has-bio:has(.hs:hover) .ld-bio,#p-about .leader.has-bio .ld-bio:hover,#p-about .leader.has-bio .hs:focus-visible~.ld-bio{opacity:1;visibility:visible;transform:translate(-50%,0) scale(1);transition:opacity .25s ease,transform .3s var(--ease,ease),visibility 0s;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.ld-bio{transition:none}}
+/* bio on touch screens: the card's bio is copied into a sheet at the bottom of the screen */
+@media (hover:none),(max-width:640px){.ld-bio{display:none}}
+#bioSheet{position:fixed;z-index:80;left:16px;right:16px;bottom:16px;max-width:520px;margin-inline:auto;padding:22px 24px 20px;border-radius:20px;color:#fff;
+  background:rgba(22,24,28,.88);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);box-shadow:0 24px 60px -20px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);
+  opacity:0;transform:translateY(12px);transition:opacity .25s ease,transform .3s ease;pointer-events:none}
+#bioSheet.on{opacity:1;transform:none;pointer-events:auto}
+#bioSheet b{display:block;font-weight:600;margin-bottom:8px;padding-right:36px}
+#bioSheet b::after{content:"";display:block;width:28px;height:3px;border-radius:2px;background:var(--red);margin-top:8px}
+#bioSheet p{font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.92);margin:0}
+#bioSheet .bs-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer}

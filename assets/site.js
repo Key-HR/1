@@ -284,6 +284,20 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
     q.addEventListener('focus',function(){if(st.value)data(function(){})});
     new MutationObserver(function(){if(last)say(last[0],last[1])}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
     say('pick')})();
+  // leader bios: keep the hover panel on screen; on touch screens show the bio in a bottom sheet
+  (function(){var sheet=null,cur=null;
+    function touch(){return matchMedia('(hover: none),(max-width: 640px)').matches}
+    function place(l){var b=l.querySelector('.ld-bio');if(!b)return;b.style.left='';b.style.marginLeft='';var r=l.getBoundingClientRect(),w=b.offsetWidth||300,c=r.left+r.width/2,lo=16+w/2,hi=document.documentElement.clientWidth-16-w/2,t=Math.max(lo,Math.min(hi,c));if(t!==c)b.style.marginLeft=(t-c)+'px'}
+    document.addEventListener('mouseover',function(e){var l=e.target.closest&&e.target.closest('#p-about .leader.has-bio');if(l&&!touch())place(l)});
+    document.addEventListener('focusin',function(e){var l=e.target.closest&&e.target.closest('#p-about .leader.has-bio');if(l&&!touch())place(l)});
+    function close(){if(sheet){sheet.classList.remove('on');cur=null}}
+    function open(l){var b=l.querySelector('.ld-bio');if(!b)return;if(!sheet){sheet=document.createElement('div');sheet.id='bioSheet';sheet.setAttribute('role','dialog');sheet.setAttribute('aria-modal','false');document.body.appendChild(sheet)}
+      sheet.innerHTML='<button type="button" class="bs-x" aria-label="Close" data-bs-x>×</button>'+b.innerHTML;sheet.setAttribute('aria-label',b.querySelector('b').textContent);cur=l;requestAnimationFrame(function(){sheet.classList.add('on')})}
+    document.addEventListener('click',function(e){var h=e.target.closest('#p-about .leader.has-bio .hs');
+      if(h&&touch()){e.preventDefault();var l=h.parentNode;if(cur===l&&sheet&&sheet.classList.contains('on'))close();else open(l);return}
+      if(sheet&&sheet.classList.contains('on')&&(e.target.closest('[data-bs-x]')||!e.target.closest('#bioSheet')))close()},true);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+    window.addEventListener('hashchange',close)})();
   // Spanish language toggle
   // Language toggle: English (source), Spanish and Portuguese
   (function(){var D={es:window.I18N_ES||{},pt:window.I18N_PT||{},ht:window.I18N_HT||{}},lang='en',touched=[],V={},busy=false;
