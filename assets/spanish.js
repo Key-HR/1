@@ -2371,6 +2371,7 @@ window.I18N_ES={
 "Email Michele Kirkland": "Enviar un correo a Michele Kirkland",
 "Email Amanda Razz": "Enviar un correo a Amanda Razz",
 "Email Jan Davila": "Enviar un correo a Jan Davila",
+"Key HR team members collaborating around a conference table": "Miembros del equipo de Key HR colaborando alrededor de una mesa de reuniones",
 "Workforce management": "Gestión de la fuerza laboral",
 "Workforce Management": "Gestión de la fuerza laboral",
 "Time and attendance": "Control de tiempo y asistencia",

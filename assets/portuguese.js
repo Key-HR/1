@@ -2704,5 +2704,6 @@ window.I18N_PT={
 "Email Carmelite Souffront": "Enviar e-mail para Carmelite Souffront",
 "Email Michele Kirkland": "Enviar e-mail para Michele Kirkland",
 "Email Amanda Razz": "Enviar e-mail para Amanda Razz",
-"Email Jan Davila": "Enviar e-mail para Jan Davila"
+"Email Jan Davila": "Enviar e-mail para Jan Davila",
+"Key HR team members collaborating around a conference table": "Membros da equipe da Key HR colaborando ao redor de uma mesa de reunião"
 };
