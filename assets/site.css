@@ -1953,3 +1953,7 @@ p,li,dd,figcaption{text-wrap:pretty}
 #bioSheet b::after{content:"";display:block;width:28px;height:3px;border-radius:2px;background:var(--red);margin-top:8px}
 #bioSheet p{font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.92);margin:0}
 #bioSheet .bs-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font:inherit;font-size:1.2rem;line-height:1;cursor:pointer}
+/* bio panel sits just below the photo, with a small pointer and an invisible bridge so the pointer can move onto it */
+.ld-bio{top:calc(var(--hs-h,150px) + 14px)}
+.ld-bio::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.ld-bio::after{content:"";position:absolute;top:-7px;left:calc(50% - 7px - var(--bio-shift,0px));width:14px;height:14px;background:inherit;border-left:1px solid rgba(255,255,255,.12);border-top:1px solid rgba(255,255,255,.12);transform:rotate(45deg);border-radius:3px 0 0 0}

@@ -287,7 +287,7 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
   // leader bios: keep the hover panel on screen; on touch screens show the bio in a bottom sheet
   (function(){var sheet=null,cur=null;
     function touch(){return matchMedia('(hover: none),(max-width: 640px)').matches}
-    function place(l){var b=l.querySelector('.ld-bio');if(!b)return;b.style.left='';b.style.marginLeft='';var r=l.getBoundingClientRect(),w=b.offsetWidth||300,c=r.left+r.width/2,lo=16+w/2,hi=document.documentElement.clientWidth-16-w/2,t=Math.max(lo,Math.min(hi,c));if(t!==c)b.style.marginLeft=(t-c)+'px'}
+    function place(l){var b=l.querySelector('.ld-bio');if(!b)return;b.style.left='';b.style.marginLeft='';b.style.removeProperty('--bio-shift');var hs=l.querySelector('.hs');if(hs)b.style.setProperty('--hs-h',hs.offsetHeight+'px');var r=l.getBoundingClientRect(),w=b.offsetWidth||300,c=r.left+r.width/2,lo=16+w/2,hi=document.documentElement.clientWidth-16-w/2,t=Math.max(lo,Math.min(hi,c));if(t!==c){b.style.marginLeft=(t-c)+'px';b.style.setProperty('--bio-shift',(t-c)+'px')}}
     document.addEventListener('mouseover',function(e){var l=e.target.closest&&e.target.closest('#p-about .leader.has-bio');if(l&&!touch())place(l)});
     document.addEventListener('focusin',function(e){var l=e.target.closest&&e.target.closest('#p-about .leader.has-bio');if(l&&!touch())place(l)});
     function close(){if(sheet){sheet.classList.remove('on');cur=null}}
@@ -297,7 +297,8 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
       if(h&&touch()){e.preventDefault();var l=h.parentNode;if(cur===l&&sheet&&sheet.classList.contains('on'))close();else open(l);return}
       if(sheet&&sheet.classList.contains('on')&&(e.target.closest('[data-bs-x]')||!e.target.closest('#bioSheet')))close()},true);
     document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
-    window.addEventListener('hashchange',close)})();
+    window.addEventListener('hashchange',close);
+    function all(){if(touch())return;[].forEach.call(document.querySelectorAll('#p-about .leader.has-bio'),place)}window.addEventListener('resize',all);window.addEventListener('load',all);window.addEventListener('hashchange',function(){setTimeout(all,80)});setTimeout(all,0)})();
   // Spanish language toggle
   // Language toggle: English (source), Spanish and Portuguese
   (function(){var D={es:window.I18N_ES||{},pt:window.I18N_PT||{},ht:window.I18N_HT||{}},lang='en',touched=[],V={},busy=false;
