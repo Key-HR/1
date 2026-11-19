@@ -23,6 +23,7 @@ assets/
   site.css            All styles
   site.js             Router, menus, animations, forms and reader
   spanish.js          Spanish translations used by the language toggle
+  portuguese.js       Portuguese (Brazil) translations used by the language toggle
   images/             Logo, hero, leadership headshots and community photos
   forms/              Client forms and legal update packets (PDF, English and Spanish)
 pages/                Clean links for each page (for example pages/payroll.html opens #payroll)
@@ -190,7 +191,7 @@ Search engines ignore everything after `#` in an address, so every route's canon
   - Button fill `#C82E1E` (`--red-fill`), deep enough for white text to pass WCAG AA.
   - Crimson `#990000` (`--crimson`) for light-mode hover states, and `#F2705F` in dark mode. Earlier versions of this guide listed `#990000` as the primary accent; confirm with Key HR whether to keep it.
   - Clean, high-contrast executive typography paired with scannable feature grids and clear, action-oriented CTAs.
-- **Spanish:** The Español toggle swaps exact English text for entries in `assets/spanish.js`. Every English wording change needs a matching entry, or that text stays in English when Spanish is on.
+- **Spanish and Portuguese:** The Español and Português buttons in the top bar swap exact English text for entries in `assets/spanish.js` and `assets/portuguese.js` (Brazilian Portuguese). Every English wording change needs a matching entry in both files, or that text stays in English. A link can open in a language with `?lang=es` or `?lang=pt`, and the choice is remembered on the visitor's device. Client forms and legal packets open in English when Portuguese is on.
 - **Lead capture and CRM governance:** All web forms, interactive tool completions and broker submissions must route cleanly into **Salesforce** (the organization's system of record) with complete source attribution. In this preview build the quote and call forms are not connected yet.
 
 ---

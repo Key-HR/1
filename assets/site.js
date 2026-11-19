@@ -253,40 +253,54 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
     window.addEventListener('hashchange',function(){setTimeout(function(){document.querySelectorAll('.page:not([hidden]) .rv:not(.rv-in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){reveal(el);io.unobserve(el)}})},60)})})();
 
   // Spanish language toggle
-  (function(){var ES=window.I18N_ES||{},lang='en',touched=[],ESV={},busy=false;for(var k in ES)ESV[ES[k]]=1;
-    var MON={Jan:'ene',Feb:'feb',Mar:'mar',Apr:'abr',May:'may',Jun:'jun',Jul:'jul',Aug:'ago',Sep:'sep',Oct:'oct',Nov:'nov',Dec:'dic'};
-    var RX=[[/^(\d+) min read$/,function(m){return m[1]+' min de lectura'}],
-      [/^([A-Z][a-z]{2}) (\d{1,2}), (\d{4})(?: · (\d+) min read)?$/,function(m){return m[2]+' '+(MON[m[1]]||m[1])+' '+m[3]+(m[4]?' · '+m[4]+' min de lectura':'')}],
+  // Language toggle: English (source), Spanish and Portuguese
+  (function(){var D={es:window.I18N_ES||{},pt:window.I18N_PT||{}},lang='en',touched=[],V={},busy=false;
+    for(var L in D){V[L]={};for(var k in D[L])V[L][D[L][k]]=1}
+    var NAME={es:'Español',pt:'Português'},HL={es:'es',pt:'pt-BR'},ARIA={es:'Ver el sitio en español',pt:'Ver o site em português'};
+    var MON={es:{Jan:'ene',Feb:'feb',Mar:'mar',Apr:'abr',May:'may',Jun:'jun',Jul:'jul',Aug:'ago',Sep:'sep',Oct:'oct',Nov:'nov',Dec:'dic'},
+             pt:{Jan:'jan',Feb:'fev',Mar:'mar',Apr:'abr',May:'mai',Jun:'jun',Jul:'jul',Aug:'ago',Sep:'set',Oct:'out',Nov:'nov',Dec:'dez'}};
+    var RXL={es:[[/^(\d+) min read$/,function(m){return m[1]+' min de lectura'}],
+      [/^([A-Z][a-z]{2}) (\d{1,2}), (\d{4})(?: · (\d+) min read)?$/,function(m){return m[2]+' '+(MON.es[m[1]]||m[1])+' '+m[3]+(m[4]?' · '+m[4]+' min de lectura':'')}],
       [/^(\d+) resources?$/,function(m){return m[1]==='1'?'1 recurso':m[1]+' recursos'}],
       [/^(\d+) of (\d+): a PEO could help$/,function(m){return m[1]+' de '+m[2]+': una PEO podría ayudarle'}],
       [/^(\d+) of (\d+): a strong fit$/,function(m){return m[1]+' de '+m[2]+': una opción ideal'}],
       [/^Preview only\. In the live site, (.+) would be added to the Key HR newsletter\.$/,function(m){return 'Solo vista previa. En el sitio en vivo, '+m[1]+' se agregaría al boletín de Key HR.'}],
-      [/^Enter (.+)\.$/,function(m){return 'Ingrese '+m[1]+'.'}]];
-    function tr(raw){var k=raw.replace(/\s+/g,' ').trim();if(!k||ESV[k])return null;if(ES.hasOwnProperty(k))return ES[k];for(var i=0;i<RX.length;i++){var m=k.match(RX[i][0]);if(m)return RX[i][1](m)}return null}
-    function skip(el){return !el||el.closest('script,style,svg,[data-noi18n],[data-es-html]')}
+      [/^Enter (.+)\.$/,function(m){return 'Ingrese '+m[1]+'.'}]],
+      pt:[[/^(\d+) min read$/,function(m){return m[1]+' min de leitura'}],
+      [/^([A-Z][a-z]{2}) (\d{1,2}), (\d{4})(?: · (\d+) min read)?$/,function(m){return m[2]+' de '+(MON.pt[m[1]]||m[1])+'. de '+m[3]+(m[4]?' · '+m[4]+' min de leitura':'')}],
+      [/^(\d+) resources?$/,function(m){return m[1]==='1'?'1 recurso':m[1]+' recursos'}],
+      [/^(\d+) of (\d+): a PEO could help$/,function(m){return m[1]+' de '+m[2]+': uma PEO pode ajudar'}],
+      [/^(\d+) of (\d+): a strong fit$/,function(m){return m[1]+' de '+m[2]+': uma ótima opção'}],
+      [/^Preview only\. In the live site, (.+) would be added to the Key HR newsletter\.$/,function(m){return 'Apenas pré-visualização. No site oficial, '+m[1]+' seria adicionado à newsletter da Key HR.'}],
+      [/^Enter (.+)\.$/,function(m){return 'Informe '+m[1]+'.'}]]};
+    function cv(){return V[lang]||{}}
+    function tr(raw){var k=raw.replace(/\s+/g,' ').trim(),d=D[lang],R=RXL[lang]||[];if(!k||!d||cv()[k])return null;if(d.hasOwnProperty(k))return d[k];for(var i=0;i<R.length;i++){var m=k.match(R[i][0]);if(m)return R[i][1](m)}return null}
+    function hsel(){return '[data-'+lang+'-html]'}
+    function skip(el){return !el||el.closest('script,style,svg,[data-noi18n],'+hsel())}
     function tNode(n){if(skip(n.parentElement))return;var v=n.nodeValue;if(!v||!/[A-Za-z]/.test(v))return;
-      var de=n.parentElement.getAttribute('data-es'),t=de&&n.parentElement.childNodes.length===1?de:tr(v);if(t==null)return;
+      var de=n.parentElement.getAttribute('data-'+lang),t=de&&n.parentElement.childNodes.length===1?de:tr(v);if(t==null)return;
       var lead=v.match(/^\s*/)[0],trail=v.match(/\s*$/)[0];if(!n.__en)touched.push(n);n.__en=v;n.nodeValue=lead+t+trail}
     var AT=['placeholder','aria-label','title','alt'];
     function tEl(el){if(skip(el))return;AT.forEach(function(a){var v=el.getAttribute(a);if(!v)return;var t=tr(v);if(t==null)return;el.__enA=el.__enA||{};if(!(a in el.__enA)){el.__enA[a]=v;touched.push(el)}el.setAttribute(a,t)})}
-    function walk(root){if(root.nodeType===3){tNode(root);return}if(root.nodeType!==1)return;var hs=[].slice.call(root.querySelectorAll('[data-es-html]'));if(root.hasAttribute('data-es-html'))hs.push(root);hs.forEach(function(el){if(el.__enH==null){el.__enH=el.innerHTML;touched.push(el)}el.innerHTML=el.getAttribute('data-es-html')});tEl(root);root.querySelectorAll('*').forEach(tEl);
+    function walk(root){if(root.nodeType===3){tNode(root);return}if(root.nodeType!==1)return;var hs=[].slice.call(root.querySelectorAll(hsel()));if(root.matches(hsel()))hs.push(root);hs.forEach(function(el){if(el.__enH==null){el.__enH=el.innerHTML;touched.push(el)}el.innerHTML=el.getAttribute('data-'+lang+'-html')});tEl(root);root.querySelectorAll('*').forEach(tEl);
       var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),n,list=[];while((n=w.nextNode()))list.push(n);list.forEach(tNode)}
     function doTitle(){var t=tr(document.title);if(t!=null){document.__enT=document.title;busy=true;document.title=t;busy=false}}
-    function restore(){touched.forEach(function(x){if(x.nodeType===3&&x.__en!=null){x.nodeValue=x.__en;x.__en=null}else if(x.__enH!=null){x.innerHTML=x.__enH;x.__enH=null}else if(x.__enA){for(var a in x.__enA)x.setAttribute(a,x.__enA[a]);x.__enA=null}});touched=[];if(document.__enT){document.title=document.__enT;document.__enT=null}}
-    var mo=new MutationObserver(function(ms){if(lang!=='es'||busy)return;busy=true;ms.forEach(function(m){
-      if(m.type==='characterData'){var n=m.target;if(n.parentNode&&n.parentNode.nodeName==='TITLE')return;if(!ESV[n.nodeValue.trim()]){n.__en=null;tNode(n)}}
-      else if(m.type==='attributes'){var el=m.target,v=el.getAttribute(m.attributeName);if(v&&!ESV[v]){if(el.__enA)delete el.__enA[m.attributeName];tEl(el)}}
+    function restore(){touched.forEach(function(x){if(x.nodeType===3&&x.__en!=null){x.nodeValue=x.__en;x.__en=null}else if(x.__enH!=null){x.innerHTML=x.__enH;x.__enH=null}else if(x.__enA){for(var a in x.__enA)x.setAttribute(a,x.__enA[a]);x.__enA=null}});touched=[];if(document.__enT){busy=true;document.title=document.__enT;busy=false;document.__enT=null}}
+    var mo=new MutationObserver(function(ms){if(lang==='en'||busy)return;busy=true;ms.forEach(function(m){
+      if(m.type==='characterData'){var n=m.target;if(n.parentNode&&n.parentNode.nodeName==='TITLE')return;if(!cv()[n.nodeValue.trim()]){n.__en=null;tNode(n)}}
+      else if(m.type==='attributes'){var el=m.target,v=el.getAttribute(m.attributeName);if(v&&!cv()[v]){if(el.__enA)delete el.__enA[m.attributeName];tEl(el)}}
       else m.addedNodes.forEach(walk)});busy=false});
-    var to=new MutationObserver(function(){if(lang==='es'&&!busy&&!ESV[document.title])doTitle()});
-    function setLang(l){lang=l;document.documentElement.lang=l;document.documentElement.classList.toggle('lang-es',l==='es');
-      document.querySelectorAll('[data-lang-toggle]').forEach(function(b){b.textContent=l==='es'?'English':'Español';b.setAttribute('lang',l==='es'?'en':'es');b.setAttribute('aria-label',l==='es'?'View site in English':'Ver el sitio en español')});
-      if(l==='es'){busy=true;walk(document.body);doTitle();busy=false;mo.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:AT});var te=document.querySelector('title');if(te)to.observe(te,{childList:true,characterData:true,subtree:true})}
-      else{mo.disconnect();to.disconnect();restore()}
+    var to=new MutationObserver(function(){if(lang!=='en'&&!busy&&!cv()[document.title])doTitle()});
+    function labels(){document.querySelectorAll('[data-lang-toggle]').forEach(function(b){var x=b.getAttribute('data-lang-toggle')||'es',on=lang===x;b.textContent=on?'English':NAME[x];b.setAttribute('lang',on?'en':HL[x]);b.setAttribute('aria-label',on?'View site in English':ARIA[x]);b.setAttribute('aria-pressed',on?'true':'false')})}
+    function setLang(l){if(!D[l])l='en';if(lang!=='en'){mo.disconnect();to.disconnect();restore()}
+      lang=l;document.documentElement.lang=l==='en'?'en':HL[l];['es','pt'].forEach(function(x){document.documentElement.classList.toggle('lang-'+x,l===x)});labels();
+      if(l!=='en'){busy=true;walk(document.body);doTitle();busy=false;mo.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:AT});var te=document.querySelector('title');if(te)to.observe(te,{childList:true,characterData:true,subtree:true})}
       try{localStorage.setItem('keyhr-lang',l)}catch(e){}}
-    document.addEventListener('click',function(e){var b=e.target.closest('[data-lang-toggle]');if(!b)return;e.preventDefault();if(typeof closeMenu==='function')closeMenu();setLang(lang==='es'?'en':'es')});
+    document.addEventListener('click',function(e){var b=e.target.closest('[data-lang-toggle]');if(!b)return;e.preventDefault();if(typeof closeMenu==='function')closeMenu();var x=b.getAttribute('data-lang-toggle')||'es';setLang(lang===x?'en':x)});
     window.setLang=setLang;
     var saved=null;try{saved=localStorage.getItem('keyhr-lang')}catch(e){}
-    if(saved==='es'||/[?&]lang=es\b/.test(location.search))setTimeout(function(){setLang('es')},0)})();
+    var q=(location.search.match(/[?&]lang=(es|pt)\b/)||[])[1];
+    if(q||saved==='es'||saved==='pt')setTimeout(function(){setLang(q||saved)},0)})();
   // end Spanish language toggle
   // chat
   var fab=document.getElementById('chatFab'),chat=document.getElementById('chat'),log=document.getElementById('chatLog'),cf=document.getElementById('chatForm'),ci=document.getElementById('chatInput');
