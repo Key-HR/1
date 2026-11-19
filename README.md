@@ -25,6 +25,7 @@ assets/
   spanish.js          Spanish translations used by the language toggle
   portuguese.js       Portuguese (Brazil) translations used by the language toggle
   creole.js           Haitian Creole translations used by the language toggle
+  class-codes.js      Workers' comp class codes by state for the Who We Serve lookup (loaded on demand)
   images/             Logo, hero, leadership headshots and community photos
   forms/              Client forms and legal update packets (PDF, English and Spanish)
 pages/                Clean links for each page (for example pages/payroll.html opens #payroll)

@@ -2682,5 +2682,12 @@ window.I18N_PT={
 "Ready to experience the white-glove PEO difference?": "Pronto para conhecer a diferença de uma PEO de excelência?",
 "Contact Key HR today at": "Fale com a Key HR hoje pelo telefone",
 "or email": "ou envie um e-mail para",
-"to schedule a complimentary HR and risk assessment.": "para agendar uma avaliação gratuita de RH e riscos."
+"to schedule a complimentary HR and risk assessment.": "para agendar uma avaliação gratuita de RH e riscos.",
+"Look Up Your Workers’ Compensation Class Code": "Consulte o código de classe do seu seguro de acidentes de trabalho",
+"Choose a state, then type a few words about the work to find its class code, or enter a class code to see its description.": "Escolha um estado e digite em inglês algumas palavras sobre o trabalho para encontrar o código de classe, ou informe um código de classe para ver a descrição.",
+"Select a state": "Selecione um estado",
+"Class code or description": "Código de classe ou descrição",
+"For reference only. Codes and descriptions are shown in English, and some descriptions are abbreviated. Your final classification is confirmed by Key HR underwriting. North Dakota, Ohio, Washington and Wyoming run their own state funds and are not listed.": "Apenas para referência. Os códigos e as descrições são exibidos em inglês, e algumas descrições estão abreviadas. A equipe de subscrição da Key HR confirma sua classificação final. Dakota do Norte, Ohio, Washington e Wyoming têm seus próprios fundos estaduais e não estão na lista.",
+"Workers’ compensation class code lookup": "Consulta de códigos de classe do seguro de acidentes de trabalho",
+"e.g. 8810, plumbing or restaurant": "ex.: 8810, plumbing ou restaurant (em inglês)"
 };

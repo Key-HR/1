@@ -2682,5 +2682,12 @@ window.I18N_HT={
 "Ready to experience the white-glove PEO difference?": "Ou pare pou fè eksperyans diferans yon PEO premye klas?",
 "Contact Key HR today at": "Kontakte Key HR jodi a nan",
 "or email": "oswa voye yon imèl bay",
-"to schedule a complimentary HR and risk assessment.": "pou planifye yon evalyasyon RH ak risk gratis."
+"to schedule a complimentary HR and risk assessment.": "pou planifye yon evalyasyon RH ak risk gratis.",
+"Look Up Your Workers’ Compensation Class Code": "Chèche kòd klas asirans aksidan travay ou",
+"Choose a state, then type a few words about the work to find its class code, or enter a class code to see its description.": "Chwazi yon eta, epi tape kèk mo an angle sou travay la pou jwenn kòd klas li, oswa antre yon kòd klas pou wè deskripsyon li.",
+"Select a state": "Chwazi yon eta",
+"Class code or description": "Kòd klas oswa deskripsyon",
+"For reference only. Codes and descriptions are shown in English, and some descriptions are abbreviated. Your final classification is confirmed by Key HR underwriting. North Dakota, Ohio, Washington and Wyoming run their own state funds and are not listed.": "Pou referans sèlman. Kòd ak deskripsyon yo parèt an angle, epi gen kèk deskripsyon ki abreje. Se ekip souskripsyon Key HR la ki konfime klasifikasyon final ou. North Dakota, Ohio, Washington ak Wyoming gen pwòp fon eta pa yo, kidonk yo pa nan lis la.",
+"Workers’ compensation class code lookup": "Rechèch kòd klas asirans aksidan travay",
+"e.g. 8810, plumbing or restaurant": "egz. 8810, plumbing oswa restaurant (an angle)"
 };

@@ -1908,3 +1908,25 @@ p,li,dd,figcaption{text-wrap:pretty}
 .ar-content .cmp-table{margin-inline:calc((100% - min(780px, 100vw - 40px)) / 2)}
 .cmp-table table{min-width:900px}
 .cmp-table th[scope=row]{white-space:normal;min-width:150px;max-width:170px;line-height:1.3}
+
+/* ===== Who We Serve: workers' comp class code lookup ===== */
+.cc-box{margin-top:22px;padding:clamp(22px,3vw,32px);border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);color:var(--ink,#222)}
+.cc-head{display:flex;gap:16px;align-items:flex-start}
+.cc-head h3{font-size:var(--s-lg)}
+.cc-head p{color:var(--muted);margin-top:4px;font-size:var(--s-sm)}
+.cc-ico{flex:0 0 48px;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--red) 10%,var(--card));color:var(--red)}
+.cc-ico svg{width:24px;height:24px}
+.cc-form{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:14px;margin-top:20px}
+.cc-f{display:grid;gap:6px;font-size:var(--s-xs);font-weight:600;color:var(--muted)}
+.cc-f select,.cc-f input{font:inherit;font-size:1rem;font-weight:400;color:var(--ink,#222);background:var(--paper,#fff);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;width:100%}
+.cc-f select:focus,.cc-f input:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.cc-status{margin:16px 0 0;font-size:var(--s-sm);color:var(--muted)}
+.cc-results{list-style:none;margin:10px 0 0;padding:0;max-height:360px;overflow-y:auto;border-radius:14px;border:1px solid var(--line)}
+.cc-results:empty{display:none}
+.cc-results li{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:baseline;padding:11px 16px;border-top:1px solid var(--line);font-size:var(--s-sm)}
+.cc-results li:first-child{border-top:0}
+.cc-results li:nth-child(even){background:var(--mist)}
+.cc-code{font-weight:700;color:var(--red);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.cc-desc mark{background:color-mix(in srgb,var(--red) 16%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+.cc-note{margin-top:14px;font-size:var(--s-xs);color:var(--muted)}
+@media (max-width:640px){.cc-form{grid-template-columns:1fr}.cc-head{flex-direction:column}}

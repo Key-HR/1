@@ -252,6 +252,38 @@ var ARTICLES={"hcm-upgraded": {"type": "Article", "topic": "Business Growth", "d
       var sib=[].slice.call(el.parentElement.children).filter(function(x){return seen.has(x)}),i=sib.indexOf(el);el.style.setProperty('--rv-d',Math.min(i,6)*80+'ms');io.observe(el)});
     window.addEventListener('hashchange',function(){setTimeout(function(){document.querySelectorAll('.page:not([hidden]) .rv:not(.rv-in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){reveal(el);io.unobserve(el)}})},60)})})();
 
+  // workers' comp class code lookup
+  (function(){var st=document.getElementById('ccState'),q=document.getElementById('ccQ'),out=document.getElementById('ccResults'),msg=document.getElementById('ccStatus');if(!st||!q)return;
+    var T={en:{pick:'Choose a state to start.',type:'Type a class code or a few words about the work.',load:'Loading class codes…',none:'No matches in {s}. Try fewer or different words.',nocode:'No class code {q} in {s}.',one:'1 match in {s}',many:'{n} matches in {s}',first:'Showing the first {m} of {n} matches in {s}. Add a word to narrow it down.',err:'The class code list could not load. Please try again.'},
+      es:{pick:'Elija un estado para comenzar.',type:'Escriba un código de clase o algunas palabras sobre el trabajo.',load:'Cargando códigos de clase…',none:'No hay resultados en {s}. Pruebe con menos palabras o con otras.',nocode:'No existe el código de clase {q} en {s}.',one:'1 resultado en {s}',many:'{n} resultados en {s}',first:'Se muestran los primeros {m} de {n} resultados en {s}. Agregue una palabra para afinar la búsqueda.',err:'No se pudo cargar la lista de códigos de clase. Inténtelo de nuevo.'},
+      'pt-BR':{pick:'Escolha um estado para começar.',type:'Digite um código de classe ou algumas palavras sobre o trabalho.',load:'Carregando códigos de classe…',none:'Nenhum resultado em {s}. Tente menos palavras ou outras palavras.',nocode:'Não existe o código de classe {q} em {s}.',one:'1 resultado em {s}',many:'{n} resultados em {s}',first:'Mostrando os primeiros {m} de {n} resultados em {s}. Adicione uma palavra para refinar a busca.',err:'Não foi possível carregar a lista de códigos de classe. Tente novamente.'},
+      ht:{pick:'Chwazi yon eta pou kòmanse.',type:'Tape yon kòd klas oswa kèk mo sou travay la.',load:'N ap chaje kòd klas yo…',none:'Pa gen rezilta nan {s}. Eseye mwens mo oswa lòt mo.',nocode:'Pa gen kòd klas {q} nan {s}.',one:'1 rezilta nan {s}',many:'{n} rezilta nan {s}',first:'N ap montre premye {m} nan {n} rezilta nan {s}. Ajoute yon mo pou rechèch la pi presi.',err:'Nou pa t ka chaje lis kòd klas yo. Tanpri eseye ankò.'}};
+    var MAX=60,D=null,loading=false,timer=null;
+    function L(){return T[document.documentElement.lang]||T.en}
+    function f(k,o){return L()[k].replace(/\{(\w)\}/g,function(_,x){return o&&o[x]!=null?o[x]:''})}
+    function pad(c){c=String(c);while(c.length<4)c='0'+c;return c}
+    function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+    function stName(){var o=st.options[st.selectedIndex];return o?o.textContent:''}
+    function data(cb){if(window.KHR_CLASS_CODES&&window.KHR_CLASS_CODES.s){D=window.KHR_CLASS_CODES;return cb()}if(loading)return;loading=true;say('load');
+      var sc=document.createElement('script');sc.src='assets/class-codes.js';sc.onload=function(){loading=false;D=window.KHR_CLASS_CODES;cb()};sc.onerror=function(){loading=false;say('err')};document.head.appendChild(sc)}
+    var last=null;function say(k,o){last=[k,o];msg.textContent=f(k,o)}
+    function hl(text,words){var h=esc(text);words.forEach(function(w){if(!w)return;h=h.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>')});return h}
+    function run(){out.innerHTML='';var s=st.value,raw=q.value.trim();if(!s){say('pick');return}if(!raw){say('type');return}
+      data(function(){var rows=D.s[s]||[],ds=D.d,res=[],name=stName(),words=[];
+        if(/^\d{1,4}$/.test(raw.replace(/\s/g,''))){var c=raw.replace(/\s/g,''),n=parseInt(c,10),ex=[],pre=[];
+          rows.forEach(function(r){if(r[0]===n)ex.push(r);else if(c.length<4&&pad(r[0]).indexOf(c)===0&&c.replace(/^0+/,'')!=='')pre.push(r)});
+          res=ex.concat(c.length<4?pre:[]);if(!res.length){say('nocode',{q:pad(c),s:name});return}}
+        else{words=raw.toLowerCase().replace(/[^a-z0-9& ]+/g,' ').split(/\s+/).filter(Boolean);
+          rows.forEach(function(r){var d=ds[r[1]].toLowerCase();for(var i=0;i<words.length;i++)if(d.indexOf(words[i])<0)return;res.push(r)});
+          res.sort(function(a,b){var x=ds[a[1]].toLowerCase(),y=ds[b[1]].toLowerCase(),w=words[0];return (x.indexOf(w)!==0)-(y.indexOf(w)!==0)||a[0]-b[0]});
+          if(!res.length){say('none',{s:name});return}}
+        var n=res.length;say(n>MAX?'first':n===1?'one':'many',{n:n,m:MAX,s:name});
+        out.innerHTML=res.slice(0,MAX).map(function(r){return '<li><b class="cc-code">'+pad(r[0])+'</b><span class="cc-desc">'+hl(ds[r[1]],words)+'</span></li>'}).join('')})}
+    st.addEventListener('change',function(){if(st.value)data(function(){});run();q.focus()});
+    q.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,140)});
+    q.addEventListener('focus',function(){if(st.value)data(function(){})});
+    new MutationObserver(function(){if(last)say(last[0],last[1])}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    say('pick')})();
   // Spanish language toggle
   // Language toggle: English (source), Spanish and Portuguese
   (function(){var D={es:window.I18N_ES||{},pt:window.I18N_PT||{},ht:window.I18N_HT||{}},lang='en',touched=[],V={},busy=false;
