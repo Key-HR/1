@@ -2706,5 +2706,6 @@ window.I18N_PT={
 "Email Amanda Razz": "Enviar e-mail para Amanda Razz",
 "Email Jan Davila": "Enviar e-mail para Jan Davila",
 "Key HR team members collaborating around a conference table": "Membros da equipe da Key HR colaborando ao redor de uma mesa de reunião",
-"Confident Key HR professional smiling with arms crossed": "Profissional da Key HR sorrindo com confiança, de braços cruzados"
+"Confident Key HR professional smiling with arms crossed": "Profissional da Key HR sorrindo com confiança, de braços cruzados",
+"Smiling Key HR payroll specialist holding a laptop": "Especialista em folha de pagamento da Key HR sorrindo com um notebook"
 };

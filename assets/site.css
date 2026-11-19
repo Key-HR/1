@@ -1985,3 +1985,10 @@ p,li,dd,figcaption{text-wrap:pretty}
 @media (max-width:900px){.adv-head{grid-template-columns:1fr}}
 .adv-photo{isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black)}.adv-photo img{border-radius:24px}
 .adv-photo--tools img{object-position:50% 30%}
+
+/* Payroll: cut-out photo beside the HCM technology intro */
+.cut-head{align-items:end}
+.cut-photo{margin:0 0 calc(-1 * clamp(32px,5vw,56px));position:relative;display:flex;justify-content:center;align-items:flex-end;min-height:300px}
+.cut-photo::before{content:"";position:absolute;width:min(78%,360px);aspect-ratio:1;border-radius:50%;bottom:6%;left:50%;transform:translateX(-50%);background:radial-gradient(circle at 50% 45%,#fff 0%,#fff 55%,color-mix(in srgb,var(--red) 14%,#fff) 100%);box-shadow:0 0 0 10px color-mix(in srgb,var(--red) 8%,transparent)}
+.cut-photo img{position:relative;width:auto;height:clamp(300px,34vw,420px);max-width:100%;object-fit:contain;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%)}
+@media (max-width:900px){.cut-photo{margin-bottom:8px}.cut-photo img{height:300px}}
