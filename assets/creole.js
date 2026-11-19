@@ -2711,5 +2711,12 @@ window.I18N_HT={
 "Director of Player Personnel & Roster Strategy": "Direktè pèsonèl jwè ak estrateji ekip",
 "She designs high-performing, scalable packages that attract and retain top talent while maximizing overall value for the organization.": "Li konsevwa pakè ki bay bon rezilta e ki ka grandi, ki atire epi kenbe pi bon talan yo pandan l ap ogmante valè jeneral pou òganizasyon an.",
 "Team Captain & Player Relations Coach": "Kapitèn ekip ak antrenè relasyon ak jwè yo",
-"She keeps the locker room strong, navigates the league rulebook (compliance), and provides steady, high-touch leadership so everyone performs with confidence.": "Li kenbe vestyè a solid, li konnen règleman lig la (konfòmite), epi li bay yon lidèchip ki estab e ki pre moun pou tout moun ka jwe avèk konfyans."
+"She keeps the locker room strong, navigates the league rulebook (compliance), and provides steady, high-touch leadership so everyone performs with confidence.": "Li kenbe vestyè a solid, li konnen règleman lig la (konfòmite), epi li bay yon lidèchip ki estab e ki pre moun pou tout moun ka jwe avèk konfyans.",
+"Email Jim Duffy": "Voye yon imèl bay Jim Duffy",
+"Email Glen Lancaster": "Voye yon imèl bay Glen Lancaster",
+"Email Eileen Glantz": "Voye yon imèl bay Eileen Glantz",
+"Email Carmelite Souffront": "Voye yon imèl bay Carmelite Souffront",
+"Email Michele Kirkland": "Voye yon imèl bay Michele Kirkland",
+"Email Amanda Razz": "Voye yon imèl bay Amanda Razz",
+"Email Jan Davila": "Voye yon imèl bay Jan Davila"
 };

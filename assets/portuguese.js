@@ -2711,5 +2711,12 @@ window.I18N_PT={
 "Director of Player Personnel & Roster Strategy": "Diretora de elenco e estratégia de plantel",
 "She designs high-performing, scalable packages that attract and retain top talent while maximizing overall value for the organization.": "Ela cria pacotes escaláveis e de alto desempenho que atraem e retêm os melhores talentos, maximizando o valor geral para a organização.",
 "Team Captain & Player Relations Coach": "Capitã do time e técnica de relações com os jogadores",
-"She keeps the locker room strong, navigates the league rulebook (compliance), and provides steady, high-touch leadership so everyone performs with confidence.": "Ela mantém o vestiário forte, domina o regulamento da liga (conformidade) e oferece uma liderança firme e próxima para que todos joguem com confiança."
+"She keeps the locker room strong, navigates the league rulebook (compliance), and provides steady, high-touch leadership so everyone performs with confidence.": "Ela mantém o vestiário forte, domina o regulamento da liga (conformidade) e oferece uma liderança firme e próxima para que todos joguem com confiança.",
+"Email Jim Duffy": "Enviar e-mail para Jim Duffy",
+"Email Glen Lancaster": "Enviar e-mail para Glen Lancaster",
+"Email Eileen Glantz": "Enviar e-mail para Eileen Glantz",
+"Email Carmelite Souffront": "Enviar e-mail para Carmelite Souffront",
+"Email Michele Kirkland": "Enviar e-mail para Michele Kirkland",
+"Email Amanda Razz": "Enviar e-mail para Amanda Razz",
+"Email Jan Davila": "Enviar e-mail para Jan Davila"
 };
