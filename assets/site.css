@@ -1974,3 +1974,4 @@ p,li,dd,figcaption{text-wrap:pretty}
 #p-about .leader .ld-bio .ld-role,#p-about .leader .ld-bio .ld-play,#bioSheet .ld-role,#bioSheet .ld-play{color:#ff5a48}
 #p-about .leader .ld-bio .ld-role,#bioSheet .ld-role{font-size:.74rem}
 #p-about .leader .ld-bio .ld-play{font-size:.84rem}
+#p-about .leader .ld-bio .ld-role,#bioSheet .ld-role{color:#fff}
