@@ -1957,3 +1957,11 @@ p,li,dd,figcaption{text-wrap:pretty}
 .ld-bio{top:calc(var(--hs-h,150px) + 14px)}
 .ld-bio::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
 .ld-bio::after{content:"";position:absolute;top:-7px;left:calc(50% - 7px - var(--bio-shift,0px));width:14px;height:14px;background:inherit;border-left:1px solid rgba(255,255,255,.12);border-top:1px solid rgba(255,255,255,.12);transform:rotate(45deg);border-radius:3px 0 0 0}
+
+/* bio: football role and line under the name, then the red rule */
+.ld-bio b::after,#bioSheet b::after{display:none}
+.ld-bio b,#bioSheet b{margin-bottom:2px}
+.ld-role{display:block;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#ff8a7a;margin-bottom:6px}
+.ld-play{display:block;font-size:.84rem;line-height:1.55;font-style:italic;color:rgba(255,255,255,.82)}
+.ld-rule{display:block;width:28px;height:3px;border-radius:2px;background:var(--red);margin:12px 0 10px}
+#bioSheet .ld-play{font-size:.9rem}
