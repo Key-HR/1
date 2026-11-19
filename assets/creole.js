@@ -2705,5 +2705,6 @@ window.I18N_HT={
 "Email Michele Kirkland": "Voye yon imèl bay Michele Kirkland",
 "Email Amanda Razz": "Voye yon imèl bay Amanda Razz",
 "Email Jan Davila": "Voye yon imèl bay Jan Davila",
-"Key HR team members collaborating around a conference table": "Manm ekip Key HR k ap travay ansanm bò yon tab reyinyon"
+"Key HR team members collaborating around a conference table": "Manm ekip Key HR k ap travay ansanm bò yon tab reyinyon",
+"Confident Key HR professional smiling with arms crossed": "Yon pwofesyonèl Key HR ki ap souri avèk konfyans, bra l kwaze"
 };
