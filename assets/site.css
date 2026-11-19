@@ -1992,3 +1992,4 @@ p,li,dd,figcaption{text-wrap:pretty}
 .cut-photo::before{content:"";position:absolute;width:min(78%,360px);aspect-ratio:1;border-radius:50%;bottom:6%;left:50%;transform:translateX(-50%);background:radial-gradient(circle at 50% 45%,#fff 0%,#fff 55%,color-mix(in srgb,var(--red) 14%,#fff) 100%);box-shadow:0 0 0 10px color-mix(in srgb,var(--red) 8%,transparent)}
 .cut-photo img{position:relative;width:auto;height:clamp(300px,34vw,420px);max-width:100%;object-fit:contain;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%)}
 @media (max-width:900px){.cut-photo{margin-bottom:8px}.cut-photo img{height:300px}}
+.hr-photo{margin-top:22px}.hr-photo img{object-position:45% 50%}

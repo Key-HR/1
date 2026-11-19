@@ -2707,5 +2707,6 @@ window.I18N_HT={
 "Email Jan Davila": "Voye yon imèl bay Jan Davila",
 "Key HR team members collaborating around a conference table": "Manm ekip Key HR k ap travay ansanm bò yon tab reyinyon",
 "Confident Key HR professional smiling with arms crossed": "Yon pwofesyonèl Key HR ki ap souri avèk konfyans, bra l kwaze",
-"Smiling Key HR payroll specialist holding a laptop": "Yon espesyalis pewòl Key HR k ap souri ak yon laptòp nan men l"
+"Smiling Key HR payroll specialist holding a laptop": "Yon espesyalis pewòl Key HR k ap souri ak yon laptòp nan men l",
+"Key HR advisor meeting with a client at a conference table": "Yon konseye Key HR ki nan reyinyon ak yon kliyan bò yon tab reyinyon"
 };

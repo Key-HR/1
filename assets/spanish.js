@@ -2374,6 +2374,7 @@ window.I18N_ES={
 "Key HR team members collaborating around a conference table": "Miembros del equipo de Key HR colaborando alrededor de una mesa de reuniones",
 "Confident Key HR professional smiling with arms crossed": "Profesional de Key HR sonriendo con confianza y los brazos cruzados",
 "Smiling Key HR payroll specialist holding a laptop": "Especialista en nómina de Key HR sonriendo con una computadora portátil",
+"Key HR advisor meeting with a client at a conference table": "Asesora de Key HR reunida con una clienta en una mesa de reuniones",
 "Workforce management": "Gestión de la fuerza laboral",
 "Workforce Management": "Gestión de la fuerza laboral",
 "Time and attendance": "Control de tiempo y asistencia",
