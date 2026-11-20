@@ -2820,5 +2820,7 @@ window.I18N_HT={
 "Whether you’re scaling a multi-unit territory or looking for an endorsed PEO partner for your franchise network, let’s build a cleaner, more cost-effective workforce foundation.": "Kit w ap grandi yon teritwa ki gen plizyè lokal, kit w ap chèche yon PEO pou rekòmande bay rezo franchiz ou, ann bati yon fondasyon travay ki pi pwòp e ki koute mwens.",
 "Request your custom franchise quote": "Mande kotasyon pèsonalize pou franchiz ou",
 "International Franchise Association Member": "Manm International Franchise Association",
-"Bright, modern office lobby with a reception desk and lounge seating": "Yon resepsyon biwo modèn ki klere, ak yon kontwa resepsyon ak yon espas pou chita"
+"Bright, modern office lobby with a reception desk and lounge seating": "Yon resepsyon biwo modèn ki klere, ak yon kontwa resepsyon ak yon espas pou chita",
+"Open enrollment checklist on a clipboard beside a stethoscope": "Lis enskripsyon ouvè sou yon klipbòd bò kote yon estetoskòp",
+"Smiling healthcare team walking down a bright hospital hallway": "Yon ekip swen sante k ap souri pandan y ap mache nan yon koulwa lopital ki klere"
 };

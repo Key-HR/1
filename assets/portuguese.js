@@ -2820,5 +2820,7 @@ window.I18N_PT={
 "Whether you’re scaling a multi-unit territory or looking for an endorsed PEO partner for your franchise network, let’s build a cleaner, more cost-effective workforce foundation.": "Seja para expandir um território com várias unidades ou para encontrar uma PEO recomendada para sua rede de franquias, vamos construir uma base de força de trabalho mais organizada e econômica.",
 "Request your custom franchise quote": "Solicite sua cotação personalizada para franquias",
 "International Franchise Association Member": "Membro da International Franchise Association",
-"Bright, modern office lobby with a reception desk and lounge seating": "Recepção de escritório moderna e iluminada, com balcão de atendimento e área de espera"
+"Bright, modern office lobby with a reception desk and lounge seating": "Recepção de escritório moderna e iluminada, com balcão de atendimento e área de espera",
+"Open enrollment checklist on a clipboard beside a stethoscope": "Lista de inscrição aberta em uma prancheta ao lado de um estetoscópio",
+"Smiling healthcare team walking down a bright hospital hallway": "Equipe de saúde sorridente caminhando por um corredor iluminado de hospital"
 };

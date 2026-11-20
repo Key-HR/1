@@ -2487,6 +2487,8 @@ window.I18N_ES={
 "Request your custom franchise quote": "Solicite su cotización personalizada para franquicias",
 "International Franchise Association Member": "Miembro de la International Franchise Association",
 "Bright, modern office lobby with a reception desk and lounge seating": "Recepción de oficina moderna y luminosa, con mostrador de recepción y área de descanso",
+"Open enrollment checklist on a clipboard beside a stethoscope": "Lista de inscripción abierta en un portapapeles junto a un estetoscopio",
+"Smiling healthcare team walking down a bright hospital hallway": "Equipo de salud sonriente caminando por un pasillo luminoso de hospital",
 "Workforce management": "Gestión de la fuerza laboral",
 "Workforce Management": "Gestión de la fuerza laboral",
 "Time and attendance": "Control de tiempo y asistencia",
