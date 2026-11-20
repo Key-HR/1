@@ -2707,6 +2707,7 @@ window.I18N_PT={
 "Email Jan Davila": "Enviar e-mail para Jan Davila",
 "Key HR team members collaborating around a conference table": "Membros da equipe da Key HR colaborando ao redor de uma mesa de reunião",
 "Confident Key HR professional smiling with arms crossed": "Profissional da Key HR sorrindo com confiança, de braços cruzados",
+"Smiling nurse in navy scrubs and doctor in a white coat": "Enfermeira sorridente de uniforme azul-marinho e médico de jaleco branco",
 "We Handle the Admin, Too": "Também cuidamos da administração",
 "Offering benefits comes with paperwork, deadlines and regulations. We take that work off your plate so you can focus on your team.": "Oferecer benefícios envolve papelada, prazos e regulamentações. Nós cuidamos desse trabalho para que você possa se concentrar na sua equipe.",
 "Enrollment, eligibility changes and carrier updates, managed in one place.": "Inscrições, mudanças de elegibilidade e atualizações com as seguradoras, gerenciadas em um só lugar.",

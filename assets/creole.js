@@ -2707,6 +2707,7 @@ window.I18N_HT={
 "Email Jan Davila": "Voye yon imèl bay Jan Davila",
 "Key HR team members collaborating around a conference table": "Manm ekip Key HR k ap travay ansanm bò yon tab reyinyon",
 "Confident Key HR professional smiling with arms crossed": "Yon pwofesyonèl Key HR ki ap souri avèk konfyans, bra l kwaze",
+"Smiling nurse in navy scrubs and doctor in a white coat": "Yon enfimyè k ap souri ak inifòm ble maren ak yon doktè ak blouz blan",
 "We Handle the Admin, Too": "Nou okipe administrasyon an tou",
 "Offering benefits comes with paperwork, deadlines and regulations. We take that work off your plate so you can focus on your team.": "Ofri avantaj vini ak papye, dat limit ak règleman. Nou pran travay sa a sou kont nou pou ou ka konsantre sou ekip ou.",
 "Enrollment, eligibility changes and carrier updates, managed in one place.": "Enskripsyon, chanjman kalifikasyon ak mizajou ak asirans yo, jere nan yon sèl kote.",

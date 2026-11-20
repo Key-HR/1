@@ -2042,3 +2042,12 @@ footer .f-office{margin-top:12px}
 .at-h .tc-pill{font-family:inherit;letter-spacing:0}
 .basics-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:960px){.basics-3{grid-template-columns:1fr}}
+
+/* Benefits hero: cut-out care team in place of the sample enrollment card */
+.ben-hero{padding-bottom:0}
+.ben-hero .wrap{align-items:end}
+.ben-hero .pcopy{padding-bottom:clamp(40px,5vw,64px);align-self:center}
+.ben-cut{margin:0;position:relative;display:flex;justify-content:center;align-items:flex-end}
+.ben-cut::before{content:"";position:absolute;width:min(86%,460px);aspect-ratio:1;border-radius:50%;bottom:12%;left:50%;transform:translateX(-50%);background:radial-gradient(circle at 50% 45%,#fff 0%,#fff 52%,color-mix(in srgb,var(--red) 14%,#fff) 100%);box-shadow:0 0 0 12px color-mix(in srgb,var(--red) 7%,transparent)}
+.ben-cut img{position:relative;display:block;width:auto;height:clamp(360px,40vw,520px);max-width:100%;object-fit:contain}
+@media (max-width:900px){.ben-cut img{height:min(400px,95vw)}}
