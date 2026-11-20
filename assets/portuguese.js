@@ -2725,7 +2725,6 @@ window.I18N_PT={
 "Proactive franchise HR and multi-state compliance": "RH proativo para franquias e conformidade em vários estados",
 "Pay-as-you-go workers’ comp and risk management": "Workers’ comp com pagamento conforme o uso e gestão de riscos",
 "Fortune 500-level employee benefits": "Benefícios para funcionários no nível Fortune 500",
-"NAPEO & FAPEO Certified Member": "Membro certificado da NAPEO e da FAPEO",
 "3x Inc. 5,000 Honoree": "Reconhecida 3 vezes na Inc. 5,000",
 "Serving Franchisors & Franchisees Nationwide": "Atendendo franqueadores e franqueados em todo o país",
 "The Franchise Challenge": "O desafio das franquias",
@@ -2819,5 +2818,6 @@ window.I18N_PT={
 "Custom Franchise Quote": "Cotação personalizada para franquias",
 "Ready to Unify HR Across Every Franchise Location?": "Pronto para unificar o RH em todas as unidades da sua franquia?",
 "Whether you’re scaling a multi-unit territory or looking for an endorsed PEO partner for your franchise network, let’s build a cleaner, more cost-effective workforce foundation.": "Seja para expandir um território com várias unidades ou para encontrar uma PEO recomendada para sua rede de franquias, vamos construir uma base de força de trabalho mais organizada e econômica.",
-"Request your custom franchise quote": "Solicite sua cotação personalizada para franquias"
+"Request your custom franchise quote": "Solicite sua cotação personalizada para franquias",
+"International Franchise Association Member": "Membro da International Franchise Association"
 };

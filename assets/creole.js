@@ -2725,7 +2725,6 @@ window.I18N_HT={
 "Proactive franchise HR and multi-state compliance": "RH pwoaktif pou franchiz ak konfòmite nan plizyè eta",
 "Pay-as-you-go workers’ comp and risk management": "Asirans aksidan travay (workers’ comp) peye selon itilizasyon ak jesyon risk",
 "Fortune 500-level employee benefits": "Avantaj pou anplwaye nan nivo Fortune 500",
-"NAPEO & FAPEO Certified Member": "Manm sètifye NAPEO ak FAPEO",
 "3x Inc. 5,000 Honoree": "Rekonèt 3 fwa nan Inc. 5,000",
 "Serving Franchisors & Franchisees Nationwide": "Nou sèvi franchizè ak franchize atravè tout peyi a",
 "The Franchise Challenge": "Defi franchiz yo",
@@ -2819,5 +2818,6 @@ window.I18N_HT={
 "Custom Franchise Quote": "Kotasyon pèsonalize pou franchiz",
 "Ready to Unify HR Across Every Franchise Location?": "Ou pare pou inifye RH nan chak lokal franchiz ou?",
 "Whether you’re scaling a multi-unit territory or looking for an endorsed PEO partner for your franchise network, let’s build a cleaner, more cost-effective workforce foundation.": "Kit w ap grandi yon teritwa ki gen plizyè lokal, kit w ap chèche yon PEO pou rekòmande bay rezo franchiz ou, ann bati yon fondasyon travay ki pi pwòp e ki koute mwens.",
-"Request your custom franchise quote": "Mande kotasyon pèsonalize pou franchiz ou"
+"Request your custom franchise quote": "Mande kotasyon pèsonalize pou franchiz ou",
+"International Franchise Association Member": "Manm International Franchise Association"
 };
