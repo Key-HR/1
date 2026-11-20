@@ -1993,3 +1993,36 @@ p,li,dd,figcaption{text-wrap:pretty}
 .cut-photo img{position:relative;width:auto;height:clamp(300px,34vw,420px);max-width:100%;object-fit:contain;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%)}
 @media (max-width:900px){.cut-photo{margin-bottom:8px}.cut-photo img{height:300px}}
 .hr-photo{margin-top:22px}.hr-photo img{object-position:45% 50%}
+/* Franchise services page */
+#p-franchise .phero h1{max-width:20ch}
+.fr-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.fr-trust{background:var(--band);color:var(--band-ink);padding:22px 0}
+.fr-trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 28px}
+.fr-trust li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:var(--s-sm);line-height:1.35}
+.fr-trust li+li{border-left:1px solid rgba(255,255,255,.16);padding-left:28px}
+.fr-trust svg{width:26px;height:26px;flex:none;color:#F2705F}
+.fr-pain{margin-top:clamp(28px,4vw,44px)}
+.fr-pain .bico,.fr-why .bico{color:var(--red)}
+.fr-pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:clamp(28px,4vw,44px)}
+.fr-pil{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,36px);display:grid;gap:12px;align-content:start;position:relative;overflow:hidden}
+.fr-pil::before{content:"";position:absolute;left:0;top:0;width:38%;height:4px;background:var(--red)}
+.fr-pil-top{display:flex;align-items:center;gap:14px}
+.fr-pil-top .as-num{font-size:clamp(34px,3.4vw,46px)}
+.fr-pil h3{font-size:var(--s-lg,1.3rem);line-height:1.25}
+.fr-pil-lede{color:var(--muted);margin:0}
+.fr-pil .ticks.lg{margin-top:8px;gap:16px}
+.fr-sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:clamp(24px,3.5vw,40px)}
+.fr-side{border-radius:22px;padding:clamp(24px,3.2vw,40px);background:var(--card);border:1px solid var(--line);display:grid;gap:18px;align-content:start}
+.fr-side h3{font-size:var(--s-lg,1.3rem);padding-bottom:14px;border-bottom:3px solid var(--red);justify-self:start}
+.fr-side.dark{background:var(--band);color:var(--band-ink);border-color:transparent}
+.fr-side.dark .ticks li span{color:rgba(255,255,255,.78)}
+.fr-inds{list-style:none;margin:clamp(24px,3.5vw,40px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fr-inds li{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:18px;background:var(--mist);font-weight:600;line-height:1.35}
+.fr-inds svg{width:34px;height:34px;flex:none;color:var(--red)}
+#p-franchise .grid3{margin-top:clamp(24px,3.5vw,40px)}
+#p-franchise .faq{margin-top:clamp(20px,3vw,32px)}
+.fr-contact{margin-top:14px;font-size:var(--s-sm)}
+.fr-contact a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:1000px){.fr-trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}.fr-trust li:nth-child(3){border-left:0;padding-left:0}.fr-inds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.fr-pillars,.fr-sides{grid-template-columns:1fr}}
+@media (max-width:560px){.fr-trust ul,.fr-inds{grid-template-columns:1fr}.fr-trust li+li{border-left:0;padding-left:0}}

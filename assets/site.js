@@ -2,7 +2,7 @@
   var pages=[].slice.call(document.querySelectorAll('.page'));
   var routes=pages.map(function(p){return p.getAttribute('data-page')});
   var alias={team:'about',industries:'who-we-serve',how:'approach'};
-  var parent={risk:'services',payroll:'services',hr:'services',compliance:'services','additional-solutions':'services',benefits:'services',peo:'services',careers:'about'};
+  var parent={risk:'services',payroll:'services',hr:'services',compliance:'services','additional-solutions':'services',franchise:'services',benefits:'services',peo:'services',careers:'about'};
   var navLinks=[].slice.call(document.querySelectorAll('.mainnav a.nl'));
   function cur(){var p=document.querySelector('.page:not([hidden])');return p?p.getAttribute('data-page'):'home'}
   function setNav(page){var p=parent[page]||page;navLinks.forEach(function(a){if(a.getAttribute('data-route')===p)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
@@ -11,12 +11,14 @@
   function reduced(){return matchMedia('(prefers-reduced-motion: reduce)').matches}
   function scrollToEl(el){var y=el.getBoundingClientRect().top+window.pageYOffset-headerOffset();window.scrollTo({top:y,behavior:reduced()?'auto':'smooth'})}
   var titles={home:'Key HR | Nationwide PEO for Payroll, HR, Compliance, Risk Management and Employee Benefits',services:'Services & Solutions | Key HR',risk:'Risk Management and Workers’ Comp | Key HR',benefits:'Employee Benefits | Key HR','who-we-serve':'Who We Serve | Key HR',brokers:'Partnerships | Key HR',approach:'Assessment | Key HR',about:'About Us | Key HR'};
-  titles.peo='PEO Services | Key HR';titles.resources='Resources | Key HR';titles.careers='Careers | Key HR';titles['client-center']='Client Center | Key HR';titles.privacy='Privacy Notice and Terms of Use | Key HR';titles.w2='W-2 Retrieval | Key HR';titles.payroll='Payroll Services | Key HR';titles.hr='Human Resources Services | Key HR';titles['legal-updates']='Employment Law Updates | Key HR';titles.compliance='PEO Compliance Services | Key HR';titles['additional-solutions']='Additional Solutions | Key HR';titles['not-found']='Page Not Found | Key HR';
+  titles.peo='PEO Services | Key HR';titles.resources='Resources | Key HR';titles.careers='Careers | Key HR';titles['client-center']='Client Center | Key HR';titles.privacy='Privacy Notice and Terms of Use | Key HR';titles.w2='W-2 Retrieval | Key HR';titles.payroll='Payroll Services | Key HR';titles.hr='Human Resources Services | Key HR';titles['legal-updates']='Employment Law Updates | Key HR';titles.compliance='PEO Compliance Services | Key HR';titles['additional-solutions']='Additional Solutions | Key HR';titles['not-found']='Page Not Found | Key HR';titles.franchise='Franchise PEO & Multi-Location HR Solutions | Key HR';
+  var mdesc=document.querySelector('meta[name="description"]'),mdesc0=mdesc?mdesc.getAttribute('content'):'',descs={franchise:'Unify payroll, compliance, workers’ compensation and Fortune 500-level benefits across every franchise location with Key HR. White-glove PEO support built to scale.'};
   function show(page){
     var changed=cur()!==page;
     pages.forEach(function(p){var on=p.getAttribute('data-page')===page;if(on&&p.hidden){p.hidden=false;p.style.animation='none';void p.offsetWidth;p.style.animation=''}else if(!on){p.hidden=true}});
     setNav(page);
     if(titles[page])document.title=titles[page];
+    if(mdesc)mdesc.setAttribute('content',descs[page]||mdesc0);
     var cta=document.getElementById('headCta');
     cta.setAttribute('href','#quote');delete cta.dataset.scroll;delete cta.dataset.need;
     return changed;
