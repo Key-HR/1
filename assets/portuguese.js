@@ -2832,5 +2832,7 @@ window.I18N_PT={
 "Modern boardroom with a long conference table ready for a meeting": "Sala de reuniões moderna com uma longa mesa pronta para uma reunião",
 "Tampa Office": "Escritório de Tampa",
 "201 E. Kennedy Blvd., Suite 1485": "201 E. Kennedy Blvd., Suite 1485",
-"Tampa, FL 33602": "Tampa, FL 33602"
+"Tampa, FL 33602": "Tampa, FL 33602",
+"9 ways to maximize your Key HR experience": "9 formas de aproveitar ao máximo sua experiência com a Key HR",
+"9 Ways to Maximize Your Key HR Experience": "9 formas de aproveitar ao máximo sua experiência com a Key HR"
 };

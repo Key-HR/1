@@ -2832,5 +2832,7 @@ window.I18N_HT={
 "Modern boardroom with a long conference table ready for a meeting": "Yon sal konsèy modèn ak yon long tab konferans ki pare pou yon reyinyon",
 "Tampa Office": "Biwo Tampa",
 "201 E. Kennedy Blvd., Suite 1485": "201 E. Kennedy Blvd., Suite 1485",
-"Tampa, FL 33602": "Tampa, FL 33602"
+"Tampa, FL 33602": "Tampa, FL 33602",
+"9 ways to maximize your Key HR experience": "9 fason pou jwenn plis nan eksperyans ou ak Key HR",
+"9 Ways to Maximize Your Key HR Experience": "9 fason pou jwenn plis nan eksperyans ou ak Key HR"
 };
