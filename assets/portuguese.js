@@ -2707,6 +2707,7 @@ window.I18N_PT={
 "Email Jan Davila": "Enviar e-mail para Jan Davila",
 "Key HR team members collaborating around a conference table": "Membros da equipe da Key HR colaborando ao redor de uma mesa de reunião",
 "Confident Key HR professional smiling with arms crossed": "Profissional da Key HR sorrindo com confiança, de braços cruzados",
+"Open enrollment checklist on a clipboard beside a stethoscope": "Lista de inscrição aberta em uma prancheta ao lado de um estetoscópio",
 "Smiling Key HR payroll specialist holding a laptop": "Especialista em folha de pagamento da Key HR sorrindo com um notebook",
 "Key HR advisor meeting with a client at a conference table": "Consultora da Key HR em reunião com uma cliente em uma mesa de reunião",
 "/ Franchise Services": "/ Serviços para franquias",
