@@ -2829,5 +2829,8 @@ window.I18N_PT={
 "Steel-frame building under construction on a fenced job site": "Prédio com estrutura de aço em construção em um canteiro de obras cercado",
 "Bright employee café with wood tables, navy chairs and hanging plants": "Café iluminado para funcionários com mesas de madeira, cadeiras azul-marinho e plantas suspensas",
 "Modern open office with workstations, laptops and city views": "Escritório moderno e aberto com estações de trabalho, notebooks e vista para a cidade",
-"Modern boardroom with a long conference table ready for a meeting": "Sala de reuniões moderna com uma longa mesa pronta para uma reunião"
+"Modern boardroom with a long conference table ready for a meeting": "Sala de reuniões moderna com uma longa mesa pronta para uma reunião",
+"Tampa Office": "Escritório de Tampa",
+"201 E. Kennedy Blvd., Suite 1485": "201 E. Kennedy Blvd., Suite 1485",
+"Tampa, FL 33602": "Tampa, FL 33602"
 };

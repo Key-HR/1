@@ -2829,5 +2829,8 @@ window.I18N_HT={
 "Steel-frame building under construction on a fenced job site": "Yon bilding ak estrikti an asye k ap konstwi sou yon chantye ki gen kloti",
 "Bright employee café with wood tables, navy chairs and hanging plants": "Yon kafe klere pou anplwaye yo ak tab an bwa, chèz ble maren ak plant pandye",
 "Modern open office with workstations, laptops and city views": "Yon biwo modèn ouvè ak pòs travay, laptòp ak vi sou vil la",
-"Modern boardroom with a long conference table ready for a meeting": "Yon sal konsèy modèn ak yon long tab konferans ki pare pou yon reyinyon"
+"Modern boardroom with a long conference table ready for a meeting": "Yon sal konsèy modèn ak yon long tab konferans ki pare pou yon reyinyon",
+"Tampa Office": "Biwo Tampa",
+"201 E. Kennedy Blvd., Suite 1485": "201 E. Kennedy Blvd., Suite 1485",
+"Tampa, FL 33602": "Tampa, FL 33602"
 };
