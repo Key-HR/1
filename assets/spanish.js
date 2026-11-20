@@ -2501,6 +2501,8 @@ window.I18N_ES={
 "Tampa, FL 33602": "Tampa, FL 33602",
 "9 ways to maximize your Key HR experience": "9 formas de aprovechar al máximo su experiencia con Key HR",
 "9 Ways to Maximize Your Key HR Experience": "9 formas de aprovechar al máximo su experiencia con Key HR",
+"Safety posters": "Carteles de seguridad",
+"Safety Posters": "Carteles de seguridad",
 "Workforce management": "Gestión de la fuerza laboral",
 "Workforce Management": "Gestión de la fuerza laboral",
 "Time and attendance": "Control de tiempo y asistencia",

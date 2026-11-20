@@ -2834,5 +2834,7 @@ window.I18N_PT={
 "201 E. Kennedy Blvd., Suite 1485": "201 E. Kennedy Blvd., Suite 1485",
 "Tampa, FL 33602": "Tampa, FL 33602",
 "9 ways to maximize your Key HR experience": "9 formas de aproveitar ao máximo sua experiência com a Key HR",
-"9 Ways to Maximize Your Key HR Experience": "9 formas de aproveitar ao máximo sua experiência com a Key HR"
+"9 Ways to Maximize Your Key HR Experience": "9 formas de aproveitar ao máximo sua experiência com a Key HR",
+"Safety posters": "Cartazes de segurança",
+"Safety Posters": "Cartazes de segurança"
 };
