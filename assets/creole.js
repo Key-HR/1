@@ -2822,5 +2822,12 @@ window.I18N_HT={
 "International Franchise Association Member": "Manm International Franchise Association",
 "Bright, modern office lobby with a reception desk and lounge seating": "Yon resepsyon biwo modèn ki klere, ak yon kontwa resepsyon ak yon espas pou chita",
 "Open enrollment checklist on a clipboard beside a stethoscope": "Lis enskripsyon ouvè sou yon klipbòd bò kote yon estetoskòp",
-"Smiling healthcare team walking down a bright hospital hallway": "Yon ekip swen sante k ap souri pandan y ap mache nan yon koulwa lopital ki klere"
+"Smiling healthcare team walking down a bright hospital hallway": "Yon ekip swen sante k ap souri pandan y ap mache nan yon koulwa lopital ki klere",
+"Laptop, phone, notebooks and coffee on a clean white desk": "Laptòp, telefòn, kaye ak kafe sou yon biwo blan ki pwòp",
+"Welcoming office reception area with a front desk and navy lounge chairs": "Yon resepsyon biwo ki akeyan ak yon kontwa ak fotèy ble maren",
+"Bright, organized warehouse with clearly marked safety lanes and stocked racks": "Yon depo klere e byen òganize ak koridò sekirite ki byen make ak etajè ki plen",
+"Steel-frame building under construction on a fenced job site": "Yon bilding ak estrikti an asye k ap konstwi sou yon chantye ki gen kloti",
+"Bright employee café with wood tables, navy chairs and hanging plants": "Yon kafe klere pou anplwaye yo ak tab an bwa, chèz ble maren ak plant pandye",
+"Modern open office with workstations, laptops and city views": "Yon biwo modèn ouvè ak pòs travay, laptòp ak vi sou vil la",
+"Modern boardroom with a long conference table ready for a meeting": "Yon sal konsèy modèn ak yon long tab konferans ki pare pou yon reyinyon"
 };

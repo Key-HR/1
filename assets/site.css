@@ -2030,6 +2030,6 @@ p,li,dd,figcaption{text-wrap:pretty}
 .phero.svc-hero{isolation:isolate}
 .svc-bg{position:absolute;inset:0;margin:0;z-index:-1}
 .svc-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block}
-.svc-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in srgb,var(--paper) 90%,transparent) 0%,color-mix(in srgb,var(--paper) 74%,transparent) 36%,color-mix(in srgb,var(--paper) 8%,transparent) 58%,transparent 100%)}
+.svc-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in srgb,var(--paper) 92%,transparent) 0%,color-mix(in srgb,var(--paper) 84%,transparent) 40%,color-mix(in srgb,var(--paper) 50%,transparent) 52%,color-mix(in srgb,var(--paper) 8%,transparent) 66%,transparent 100%)}
 .svc-hero .portal{box-shadow:0 30px 70px -28px rgba(20,10,10,.45)}
 @media (max-width:900px){.phero.svc-hero{padding-top:0}.svc-bg{position:relative;inset:auto;z-index:auto;height:clamp(200px,52vw,320px);margin-bottom:32px}.svc-bg::after{display:none}}

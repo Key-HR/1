@@ -2822,5 +2822,12 @@ window.I18N_PT={
 "International Franchise Association Member": "Membro da International Franchise Association",
 "Bright, modern office lobby with a reception desk and lounge seating": "Recepção de escritório moderna e iluminada, com balcão de atendimento e área de espera",
 "Open enrollment checklist on a clipboard beside a stethoscope": "Lista de inscrição aberta em uma prancheta ao lado de um estetoscópio",
-"Smiling healthcare team walking down a bright hospital hallway": "Equipe de saúde sorridente caminhando por um corredor iluminado de hospital"
+"Smiling healthcare team walking down a bright hospital hallway": "Equipe de saúde sorridente caminhando por um corredor iluminado de hospital",
+"Laptop, phone, notebooks and coffee on a clean white desk": "Notebook, celular, cadernos e café sobre uma mesa branca e organizada",
+"Welcoming office reception area with a front desk and navy lounge chairs": "Recepção de escritório acolhedora com balcão e poltronas azul-marinho",
+"Bright, organized warehouse with clearly marked safety lanes and stocked racks": "Armazém iluminado e organizado com faixas de segurança bem sinalizadas e prateleiras abastecidas",
+"Steel-frame building under construction on a fenced job site": "Prédio com estrutura de aço em construção em um canteiro de obras cercado",
+"Bright employee café with wood tables, navy chairs and hanging plants": "Café iluminado para funcionários com mesas de madeira, cadeiras azul-marinho e plantas suspensas",
+"Modern open office with workstations, laptops and city views": "Escritório moderno e aberto com estações de trabalho, notebooks e vista para a cidade",
+"Modern boardroom with a long conference table ready for a meeting": "Sala de reuniões moderna com uma longa mesa pronta para uma reunião"
 };
