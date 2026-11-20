@@ -2026,3 +2026,10 @@ p,li,dd,figcaption{text-wrap:pretty}
 @media (max-width:1000px){.fr-trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}.fr-trust li:nth-child(3){border-left:0;padding-left:0}.fr-inds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:820px){.fr-pillars,.fr-sides{grid-template-columns:1fr}}
 @media (max-width:560px){.fr-trust ul,.fr-inds{grid-template-columns:1fr}.fr-trust li+li{border-left:0;padding-left:0}}
+/* Services hero photo with pillar card overlay */
+.svc-vis{position:relative;display:grid}
+.svc-photo{margin:0;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 60px -30px rgba(20,10,10,.35);isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black)}
+.svc-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 55%;display:block;border-radius:24px}
+.svc-photo::after{content:"";position:absolute;left:0;bottom:0;width:38%;height:5px;background:var(--red)}
+.phero .svc-vis .portal{position:relative;z-index:1;width:min(440px,88%);margin:-120px 0 0 -48px;box-shadow:0 30px 70px -28px rgba(20,10,10,.45)}
+@media (max-width:900px){.svc-photo{aspect-ratio:16/10}.phero .svc-vis .portal{width:auto;max-width:none;margin:-60px 14px 0}}

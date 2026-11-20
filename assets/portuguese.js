@@ -2707,7 +2707,6 @@ window.I18N_PT={
 "Email Jan Davila": "Enviar e-mail para Jan Davila",
 "Key HR team members collaborating around a conference table": "Membros da equipe da Key HR colaborando ao redor de uma mesa de reunião",
 "Confident Key HR professional smiling with arms crossed": "Profissional da Key HR sorrindo com confiança, de braços cruzados",
-"Open enrollment checklist on a clipboard beside a stethoscope": "Lista de inscrição aberta em uma prancheta ao lado de um estetoscópio",
 "Smiling Key HR payroll specialist holding a laptop": "Especialista em folha de pagamento da Key HR sorrindo com um notebook",
 "Key HR advisor meeting with a client at a conference table": "Consultora da Key HR em reunião com uma cliente em uma mesa de reunião",
 "/ Franchise Services": "/ Serviços para franquias",
@@ -2820,5 +2819,6 @@ window.I18N_PT={
 "Ready to Unify HR Across Every Franchise Location?": "Pronto para unificar o RH em todas as unidades da sua franquia?",
 "Whether you’re scaling a multi-unit territory or looking for an endorsed PEO partner for your franchise network, let’s build a cleaner, more cost-effective workforce foundation.": "Seja para expandir um território com várias unidades ou para encontrar uma PEO recomendada para sua rede de franquias, vamos construir uma base de força de trabalho mais organizada e econômica.",
 "Request your custom franchise quote": "Solicite sua cotação personalizada para franquias",
-"International Franchise Association Member": "Membro da International Franchise Association"
+"International Franchise Association Member": "Membro da International Franchise Association",
+"Bright, modern office lobby with a reception desk and lounge seating": "Recepção de escritório moderna e iluminada, com balcão de atendimento e área de espera"
 };

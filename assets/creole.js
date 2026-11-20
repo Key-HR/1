@@ -2707,7 +2707,6 @@ window.I18N_HT={
 "Email Jan Davila": "Voye yon imèl bay Jan Davila",
 "Key HR team members collaborating around a conference table": "Manm ekip Key HR k ap travay ansanm bò yon tab reyinyon",
 "Confident Key HR professional smiling with arms crossed": "Yon pwofesyonèl Key HR ki ap souri avèk konfyans, bra l kwaze",
-"Open enrollment checklist on a clipboard beside a stethoscope": "Lis enskripsyon ouvè sou yon klipbòd bò kote yon estetoskòp",
 "Smiling Key HR payroll specialist holding a laptop": "Yon espesyalis pewòl Key HR k ap souri ak yon laptòp nan men l",
 "Key HR advisor meeting with a client at a conference table": "Yon konseye Key HR ki nan reyinyon ak yon kliyan bò yon tab reyinyon",
 "/ Franchise Services": "/ Sèvis pou franchiz",
@@ -2820,5 +2819,6 @@ window.I18N_HT={
 "Ready to Unify HR Across Every Franchise Location?": "Ou pare pou inifye RH nan chak lokal franchiz ou?",
 "Whether you’re scaling a multi-unit territory or looking for an endorsed PEO partner for your franchise network, let’s build a cleaner, more cost-effective workforce foundation.": "Kit w ap grandi yon teritwa ki gen plizyè lokal, kit w ap chèche yon PEO pou rekòmande bay rezo franchiz ou, ann bati yon fondasyon travay ki pi pwòp e ki koute mwens.",
 "Request your custom franchise quote": "Mande kotasyon pèsonalize pou franchiz ou",
-"International Franchise Association Member": "Manm International Franchise Association"
+"International Franchise Association Member": "Manm International Franchise Association",
+"Bright, modern office lobby with a reception desk and lounge seating": "Yon resepsyon biwo modèn ki klere, ak yon kontwa resepsyon ak yon espas pou chita"
 };
